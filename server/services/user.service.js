@@ -4,7 +4,6 @@ const uuid = require('uuid');
 const mailService = require('./mail.service');
 const tokenService = require('../services/token.service');
 const UserDto = require('../dto/user.dto');
-const { Error } = require('mongoose');
 const ApiError = require('../exceptions/api.error');
 
 class UserService {
