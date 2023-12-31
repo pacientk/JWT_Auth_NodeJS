@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors());
 app.use('/api', router);
-app.use(errorMiddleware); // ❗️ мидлваре ВСЕГДА должен подключаться последним
+app.use(errorMiddleware); // ❗️ Middleware для обработки ошибок ВСЕГДА должен подключаться последним
 
 const start = async () => {
    try {

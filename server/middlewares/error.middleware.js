@@ -1,7 +1,9 @@
 const ApiError = require('../exceptions/api.error');
 
-module.exports = function (err, req, res) {
-   console.log('@@@@ ', err);
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+module.exports = function (err, req, res, next) {
+   // Logging error in console:
+   console.log('@@@@ ERROR:::', err);
 
    if (err instanceof ApiError) {
       return res.status(err.status).json({ message: err.message, errors: err.errors });
