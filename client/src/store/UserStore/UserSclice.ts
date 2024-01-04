@@ -1,15 +1,22 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { IUser } from '../../Models/IUser';
-import { userLoginAction, userLogoutAction, userRegistrationAction } from './UserActions';
+import {
+   userCheckAuthAction,
+   userLoginAction,
+   userLogoutAction,
+   userRegistrationAction,
+} from './UserActions';
 
 interface UserState {
    user: IUser;
    isAuth: boolean;
+   isLoading: boolean;
 }
 
 const initialState: UserState = {
    user: {} as IUser,
    isAuth: false,
+   isLoading: false,
 };
 
 export const userSlice = createSlice({
@@ -31,21 +38,21 @@ export const userSlice = createSlice({
       builder
          .addCase(userLoginAction.fulfilled, (state, action) => {
             console.info('userLoginAction fulfilled');
-
             state.isAuth = true;
             state.user = action.payload.user;
          })
-         .addCase(userLoginAction.rejected, () => {
+         .addCase(userLoginAction.rejected, (state) => {
             console.error('userLoginAction rejected');
+            state.isLoading = false;
          })
          .addCase(userRegistrationAction.fulfilled, (state, action) => {
-            console.info('userRegidtrationAction fulfilled');
+            console.info('userRegistrationAction fulfilled');
 
             state.isAuth = true;
             state.user = action.payload.user;
          })
          .addCase(userRegistrationAction.rejected, () => {
-            console.error('userRegidtrationAction rejected');
+            console.error('userRegistrationAction rejected');
          })
          .addCase(userLogoutAction.fulfilled, (state, action) => {
             console.info('userLogoutAction fulfilled');
@@ -54,7 +61,20 @@ export const userSlice = createSlice({
             state.user = {} as IUser;
          })
          .addCase(userLogoutAction.rejected, () => {
-            console.error('userRegidtrationAction rejected');
+            console.error('userLogoutAction rejected');
+         })
+         .addCase(userCheckAuthAction.pending, (state, action) => {
+            state.isLoading = true;
+         })
+         .addCase(userCheckAuthAction.fulfilled, (state, action) => {
+            console.info('userCheckAuthAction fulfilled');
+            state.isLoading = false;
+            state.isAuth = true;
+            state.user = action.payload.user;
+         })
+         .addCase(userCheckAuthAction.rejected, (state) => {
+            // console.error('userCheckAuthAction rejected');
+            state.isLoading = false;
          });
    },
 });
