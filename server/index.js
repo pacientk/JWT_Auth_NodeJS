@@ -22,7 +22,14 @@ app.use(errorMiddleware); // ❗️ Middleware для обработки оши�
 
 const start = async () => {
    try {
-      await mongoose.connect(process.env.DB_URL);
+      await mongoose
+         .connect(process.env.DB_URL)
+         .then(() => {
+            console.log('@@@@ Successfully connected to MongoDB');
+         })
+         .catch((error) => {
+            console.error('@@@@ Error connecting to MongoDB:', error);
+         });
       app.listen(PORT, () => console.log(`@@@@ Server started on ${PORT} port`));
    } catch (e) {
       console.error(e);
