@@ -1,5 +1,5 @@
 // mongo-init.js
-db.auth('root', 'rootpass');
+// db.auth('newUser', 'newUserPass');
 
 db = db.getSiblingDB('service_db');
 
@@ -19,19 +19,19 @@ db.createCollection('users');
 
 db.users.insertMany([
    {
-      email: 'asd1@asd.asd',
+      email: 'asd1333@asd.asd',
       password: '123123',
       isActivated: 'true',
       activationLink: '00000',
    },
    {
-      email: 'asd2@asd.asd',
+      email: 'asd233333@asd.asd',
       password: '123123',
       isActivated: 'true',
       activationLink: '00000',
    },
    {
-      email: 'asd3@asd.asd',
+      email: '33333asd3@asd.asd',
       password: '123123',
       isActivated: 'true',
       activationLink: '00000',
