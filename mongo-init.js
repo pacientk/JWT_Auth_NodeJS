@@ -1,6 +1,3 @@
-// mongo-init.js
-// db.auth('newUser', 'newUserPass');
-
 db = db.getSiblingDB('service_db');
 
 db.createUser({

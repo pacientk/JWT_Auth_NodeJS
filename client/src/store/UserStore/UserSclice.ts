@@ -54,7 +54,7 @@ export const userSlice = createSlice({
          .addCase(userRegistrationAction.rejected, () => {
             console.error('userRegistrationAction rejected');
          })
-         .addCase(userLogoutAction.fulfilled, (state, action) => {
+         .addCase(userLogoutAction.fulfilled, (state) => {
             console.info('userLogoutAction fulfilled');
 
             state.isAuth = false;
@@ -63,7 +63,7 @@ export const userSlice = createSlice({
          .addCase(userLogoutAction.rejected, () => {
             console.error('userLogoutAction rejected');
          })
-         .addCase(userCheckAuthAction.pending, (state, action) => {
+         .addCase(userCheckAuthAction.pending, (state) => {
             state.isLoading = true;
          })
          .addCase(userCheckAuthAction.fulfilled, (state, action) => {
