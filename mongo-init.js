@@ -1,51 +1,46 @@
+print('========START========');
 db = db.getSiblingDB('service_db');
 
 db.createUser({
-   user: 'root',
-   pwd: 'rootpass',
-   roles: [
-      {
-         role: 'readWrite',
-         db: 'service_db',
-      },
-   ],
+   user: 'serviceXUser',
+   pwd: 'XmgYFQx4RIKQ',
+   roles: [{ role: 'readWrite', db: 'service_db' }],
 });
 
-// Создаем коллекцию users
+// Создаем коллекции
 db.createCollection('users');
+db.createCollection('tokens');
 
 db.users.insertMany([
    {
-      email: 'asd1333@asd.asd',
+      email: 'qqqq@asd.asd',
       password: '123123',
       isActivated: 'true',
       activationLink: '00000',
    },
    {
-      email: 'asd233333@asd.asd',
+      email: 'wwwww@asd.asd',
       password: '123123',
       isActivated: 'true',
       activationLink: '00000',
    },
    {
-      email: '33333asd3@asd.asd',
+      email: 'eeeee@asd.asd',
       password: '123123',
       isActivated: 'true',
       activationLink: '00000',
    },
 ]);
-
-// Создаем коллекцию tokens
-db.createCollection('tokens');
 
 // Добавляем документы в коллекцию tokens
 db.tokens.insertMany([
    {
-      user: db.users.findOne({ email: 'asd1@asd.asd' })._id,
+      user: db.users.findOne({ email: 'qqqq@asd.asd' })._id,
       refreshToken: 'refresh-token-1',
    },
    {
-      user: db.users.findOne({ email: 'asd2@asd.asd' })._id,
+      user: db.users.findOne({ email: 'wwwww@asd.asd' })._id,
       refreshToken: 'refresh-token-2',
    },
 ]);
+print('========END========');

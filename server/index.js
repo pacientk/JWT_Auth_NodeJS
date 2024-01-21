@@ -23,7 +23,7 @@ app.use(errorMiddleware); // ❗️ Middleware для обработки оши�
 const start = async () => {
    try {
       await mongoose
-         .connect(process.env.DB_URL)
+         .connect(process.env.MONGO_DB_URL)
          .then(() => {
             console.log('@@@@ Successfully connected to MongoDB');
          })
