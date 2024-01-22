@@ -4,10 +4,11 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const router = require('./router/index');
+const db = require('./models/db.config');
 const errorMiddleware = require('./middlewares/error.middleware');
 
 const app = new express();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.BACKEND_PORT || 4000;
 
 app.use(express.json());
 app.use(cookieParser());
@@ -23,7 +24,7 @@ app.use(errorMiddleware); // ❗️ Middleware для обработки оши�
 const start = async () => {
    try {
       await mongoose
-         .connect(process.env.MONGO_DB_URL)
+         .connect(db.db_url)
          .then(() => {
             console.log('@@@@ Successfully connected to MongoDB');
          })
