@@ -14,21 +14,21 @@ db.createCollection('tokens');
 db.users.insertMany([
    {
       email: 'qqqq@asd.asd',
-      password: '123123',
+      password: '$2b$04$mYEYAjkQhxTuPycVm.hiw.slfehVedsiOHssK.SIfXslBJfUp5SHi',
       isActivated: 'true',
-      activationLink: '00000',
+      activationLink: 'e027ceef-a96d-4885-b6c8-bc0eb9a80b75',
    },
    {
       email: 'wwwww@asd.asd',
-      password: '123123',
+      password: '$2b$04$mYEYAjkQhxTuPycVm.hiw.slfehVedsiOHssK.SIfXslBJfUp5SHi',
       isActivated: 'true',
-      activationLink: '00000',
+      activationLink: 'e027ceef-a96d-4885-b6c8-bc0eb9a80b75',
    },
    {
       email: 'eeeee@asd.asd',
-      password: '123123',
+      password: '$2b$04$mYEYAjkQhxTuPycVm.hiw.slfehVedsiOHssK.SIfXslBJfUp5SHi',
       isActivated: 'true',
-      activationLink: '00000',
+      activationLink: 'e027ceef-a96d-4885-b6c8-bc0eb9a80b75',
    },
 ]);
 
