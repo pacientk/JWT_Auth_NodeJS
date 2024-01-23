@@ -39,7 +39,7 @@ function App() {
 
    return (
       <div>
-         <h1>{userStore.isAuth ? `user autorized ${userStore.user.email}` : 'LOGIN'}</h1>
+         <h1>{userStore.isAuth ? `User autorized ${userStore.user.email}` : 'LOGIN'}</h1>
          <div>
             <button onClick={() => dispatch(userLogoutAction())}>LOGOUT</button>
             <button onClick={() => getAllUsers()}>GET USERS</button>

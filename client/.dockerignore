@@ -1,6 +1,9 @@
 # dependencies
 **/node_modules
 
+# production
+/build
+
 # environment variables file
 .env
 .env.local
