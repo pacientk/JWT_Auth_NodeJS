@@ -39,7 +39,7 @@ export const userLogoutAction = createAsyncThunk('userLogoutAction', async (_, t
       const response = await AuthService.logout();
       localStorage.removeItem('token');
 
-      return response;
+      return response.data;
    } catch (e) {
       // @ts-ignore
       return thunkAPI.rejectWithValue(e.message);

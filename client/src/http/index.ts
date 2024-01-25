@@ -26,6 +26,7 @@ api.interceptors.response.use(
                withCredentials: true,
             });
             localStorage.setItem('token', response.data.accessToken);
+            originalRequest.headers.Authorization = `Bearer ${response.data.accessToken}`;
             return api.request(originalRequest);
          } catch (e) {
             console.error('User NOT Authorized');
