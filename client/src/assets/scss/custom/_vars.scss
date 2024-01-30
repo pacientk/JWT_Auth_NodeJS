@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;200;300;400;500;600;700;900&family=Noto+Sans+Hebrew:wght@100;200;300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+
+$navbar-height: 68px;
+$BORDER-RADIUS: 18px;
+
+$svg-white: 'ffffff';
+$svg-gray-medium: '323c46';
+$svg-gray-dark: '1b1e22';
+$svg-brand: '007efc';
+$svg-footer-text: 'a3a4a5';
+$svg-gray-light: '75808a';
+$svg-bg-body: 'f0f0f0';
+$img-dir: '/./assets/images/';
+
+$white: #ffffff;
+$brand: #007efc;
+$brand-light: #238fff;
+$brand-lighter: #c8e1fb;
+$brand-dark: #016cd5;
+$error: #ef3e63;
+$gray-dark: #1b1e22;
+$gray-medium: #323c46;
+$gray-light: #75808a;
+$gray-lighter: #ebeced;
+$bg-body: #f0f0f0;
+$bg-navbar: #f2f3f4;
+$navbar-border: #dfe3e7;
+$footer-text: #a3a4a5;
+$footer-text-dark: #5e6163;
+$card-bg: #f3f4f5;
+
+:lang(ru) {
+    font-family: 'Inter Tight', sans-serif;
+}
+
+:lang(he) {
+    font-family: 'Noto Sans Hebrew', sans-serif;
+}
+
+:lang(1) {
+    font-family: 'Outfit', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Noto Sans Hebrew', 'Inter Tight', sans-serif;
+    color: $gray-dark;
+    white-space: pre-wrap;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 700;
+}
+
+h5 {
+    color: $gray-light
+}
+
+p {
+    font-family: 'Outfit', 'Noto Sans Hebrew', 'Inter Tight', sans-serif;
+    white-space: pre-wrap;
+}
+
+a {
+    font-family: 'Outfit', 'Noto Sans Hebrew', 'Inter Tight', sans-serif;
+}
+
+button, input {
+    font-family: 'Outfit', 'Noto Sans Hebrew', 'Inter Tight', sans-serif;
+}
+
+

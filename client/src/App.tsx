@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { LoginForm } from './components';
+import '../src/assets/scss/bootstrap/bootstrap.scss';
+import '../src/assets/scss/custom/custom.scss';
 import { useAppDispatch, useAppSelector } from './store/hooks/redux';
 import { userCheckAuthAction, userLogoutAction } from './store/UserStore/UserActions';
 import { userSelector } from './store/selectors';
 import UserService from './services/UserService';
 import { IUser } from './Models/IUser';
+import { HomeScreen } from './screens';
+import { NavBar } from './components';
 
 function App() {
    const dispatch = useAppDispatch();
@@ -26,20 +29,37 @@ function App() {
       }
    };
 
-   if (!userStore.isAuth) {
-      return userStore.isLoading ? (
-         <div>'Loading...'</div>
-      ) : (
-         <div>
-            <LoginForm />
-            <button onClick={getAllUsers}>GET USERS</button>
-         </div>
-      );
-   }
+   // if (!userStore.isAuth) {
+   //    return userStore.isLoading ? (
+   //       <div>'Loading...'</div>
+   //    ) : (
+   //       <>
+   //          <nav className="navbar bg-body-tertiary">
+   //             <div className="container-fluid">
+   //                <div className="container">
+   //                   <a className="navbar-brand" href="#">
+   //                      Navbar
+   //                   </a>
+   //                </div>
+   //             </div>
+   //          </nav>
+   //          <div className={'container-lg'}>
+   //             <h1 className={'h4'}>{!userStore.isAuth && `Please fill out login form`}</h1>
+   //
+   //             <LoginForm />
+   //             <button onClick={getAllUsers}>GET USERS</button>
+   //          </div>
+   //       </>
+   //    );
+   // }
 
    return (
-      <div>
-         <h1>{userStore.isAuth ? `User autorized ${userStore.user.email}` : 'LOGIN'}</h1>
+      <div className={'container-fluid'}>
+         <NavBar />
+         <HomeScreen />
+         <h1 className={'h1'}>
+            {userStore.isAuth ? `User autorized ${userStore.user.email}` : 'LOGIN'}
+         </h1>
          <div>
             <button onClick={() => dispatch(userLogoutAction())}>LOGOUT</button>
             <button onClick={() => getAllUsers()}>GET USERS</button>
