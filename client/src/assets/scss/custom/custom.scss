@@ -1,11 +1,11 @@
 @import '../bootstrap/functions';
 @import '../bootstrap/variables';
 @import '../bootstrap/mixins';
-//@import "vars";
+@import "vars";
+@import "settings";
+@import "navbar";
 //@import "mixins";
-//@import "settings";
 //@import "modal";
-//@import "navbar";
 //@import "content";
 //@import "dropdown";
 //@import "footer";
