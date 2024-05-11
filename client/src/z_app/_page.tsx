@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { CardComponent } from '@/components';
 
@@ -46,7 +46,10 @@ export default function Home() {
    const handleUpdateUser = async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       try {
-         await axios.put(`${apiUrl}/users/${updateUser.id}`, { name: updateUser.name, email: updateUser.email });
+         await axios.put(`${apiUrl}/users/${updateUser.id}`, {
+            name: updateUser.name,
+            email: updateUser.email,
+         });
          setUpdateUser({ id: '', name: '', email: '' });
          setUsers(
             users.map((user) => {
@@ -72,61 +75,69 @@ export default function Home() {
    };
 
    return (
-      <main className='flex flex-col items-center justify-center min-h-screen p-4 bg-gray-100'>
-         <div className='space-y-4 w-full max-w-2xl'>
-            <h1 className='text-2xl font-bold text-gray-800 text-center'>User Management App</h1>
+      <main className="flex flex-col items-center justify-center min-h-screen p-4 bg-gray-100">
+         <div className="space-y-4 w-full max-w-2xl">
+            <h1 className="text-2xl font-bold text-gray-800 text-center">User Management App</h1>
 
             {/* Form to add new user */}
-            <form onSubmit={createUser} className='p-4 bg-blue-100 rounded shadow'>
+            <form onSubmit={createUser} className="p-4 bg-blue-100 rounded shadow">
                <input
-                  placeholder='Name'
+                  placeholder="Name"
                   value={newUser.name}
                   onChange={(e) => setNewUser({ ...newUser, name: e.target.value })}
-                  className='mb-2 w-full p-2 border border-gray-300 rounded'
+                  className="mb-2 w-full p-2 border border-gray-300 rounded"
                />
 
                <input
-                  placeholder='Email'
+                  placeholder="Email"
                   value={newUser.email}
                   onChange={(e) => setNewUser({ ...newUser, email: e.target.value })}
-                  className='mb-2 w-full p-2 border border-gray-300 rounded'
+                  className="mb-2 w-full p-2 border border-gray-300 rounded"
                />
-               <button type='submit' className='w-full p-2 text-white bg-blue-500 rounded hover:bg-blue-600'>
+               <button
+                  type="submit"
+                  className="w-full p-2 text-white bg-blue-500 rounded hover:bg-blue-600">
                   Add User
                </button>
             </form>
 
             {/* Form to update user */}
-            <form onSubmit={handleUpdateUser} className='p-4 bg-green-100 rounded shadow'>
+            <form onSubmit={handleUpdateUser} className="p-4 bg-green-100 rounded shadow">
                <input
-                  placeholder='User ID'
+                  placeholder="User ID"
                   value={updateUser.id}
                   onChange={(e) => setUpdateUser({ ...updateUser, id: e.target.value })}
-                  className='mb-2 w-full p-2 border border-gray-300 rounded'
+                  className="mb-2 w-full p-2 border border-gray-300 rounded"
                />
                <input
-                  placeholder='New Name'
+                  placeholder="New Name"
                   value={updateUser.name}
                   onChange={(e) => setUpdateUser({ ...updateUser, name: e.target.value })}
-                  className='mb-2 w-full p-2 border border-gray-300 rounded'
+                  className="mb-2 w-full p-2 border border-gray-300 rounded"
                />
                <input
-                  placeholder='New Email'
+                  placeholder="New Email"
                   value={updateUser.email}
                   onChange={(e) => setUpdateUser({ ...updateUser, email: e.target.value })}
-                  className='mb-2 w-full p-2 border border-gray-300 rounded'
+                  className="mb-2 w-full p-2 border border-gray-300 rounded"
                />
-               <button type='submit' className='w-full p-2 text-white bg-green-500 rounded hover:bg-green-600'>
+               <button
+                  type="submit"
+                  className="w-full p-2 text-white bg-green-500 rounded hover:bg-green-600">
                   Update User
                </button>
             </form>
 
             {/* Display users */}
-            <div className='space-y-2'>
+            <div className="space-y-2">
                {users.map((user) => (
-                  <div key={user.id} className='flex items-center justify-between bg-white p-4 rounded-lg shadow'>
+                  <div
+                     key={user.id}
+                     className="flex items-center justify-between bg-white p-4 rounded-lg shadow">
                      <CardComponent card={user} />
-                     <button onClick={() => deleteUser(user.id)} className='bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded'>
+                     <button
+                        onClick={() => deleteUser(user.id)}
+                        className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded">
                         Delete User
                      </button>
                   </div>

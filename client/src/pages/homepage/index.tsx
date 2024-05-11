@@ -3,13 +3,14 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 interface User {
+   _id?: number;
    id: number;
    name: string;
    email: string;
 }
 
 const Homepage = () => {
-   const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
+   const apiUrl = process.env.API_URL || 'http://localhost:4000/api';
    const [users, setUsers] = useState<User[]>([]);
    const [newUser, setNewUser] = useState({ name: '', email: '' });
    const [updateUser, setUpdateUser] = useState({ id: '', name: '', email: '' });
@@ -55,7 +56,7 @@ const Homepage = () => {
                   return { ...user, name: updateUser.name, email: updateUser.email };
                }
                return user;
-            })
+            }),
          );
       } catch (error) {
          console.error('Error updating user:', error);
@@ -129,18 +130,20 @@ const Homepage = () => {
 
          {/* Display users */}
          <div className="space-y-2">
-            {users.map((user) => (
-               <div
-                  key={user.id}
-                  className="flex items-center justify-between bg-white p-4 rounded-lg shadow">
-                  <CardComponent card={user} />
-                  <button
-                     onClick={() => deleteUser(user.id)}
-                     className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded">
-                     Delete User
-                  </button>
-               </div>
-            ))}
+            {users.map((user) => {
+               return (
+                  <div
+                     key={user._id}
+                     className="flex items-center justify-between bg-white p-4 rounded-lg shadow">
+                     <CardComponent card={user} />
+                     <button
+                        onClick={() => deleteUser(user.id)}
+                        className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded">
+                        Delete User
+                     </button>
+                  </div>
+               );
+            })}
          </div>
       </div>
    );
