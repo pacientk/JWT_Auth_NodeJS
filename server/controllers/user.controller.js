@@ -92,6 +92,15 @@ class UserControler {
          next(e);
       }
    }
+
+   async deleteUser(req, res, next) {
+      try {
+         const users = await userService.deleteUserById(req.params.id);
+         return res.json(users);
+      } catch (e) {
+         next(e);
+      }
+   }
 }
 
 module.exports = new UserControler();

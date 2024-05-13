@@ -90,6 +90,10 @@ class UserService {
       const users = await UserModel.find();
       return users;
    }
+   async deleteUserById(id) {
+      const users = await UserModel.findByIdAndDelete(id);
+      return;
+   }
 }
 
 module.exports = new UserService();

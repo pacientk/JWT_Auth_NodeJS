@@ -15,6 +15,11 @@ const Homepage = () => {
    const [newUser, setNewUser] = useState({ name: '', email: '' });
    const [updateUser, setUpdateUser] = useState({ id: '', name: '', email: '' });
 
+   // Fetch users
+   useEffect(() => {
+      fetchData();
+   }, []);
+
    const fetchData = async () => {
       try {
          const response = await axios.get(`${apiUrl}/users`);
@@ -24,10 +29,15 @@ const Homepage = () => {
       }
    };
 
-   // Fetch users
-   useEffect(() => {
-      fetchData();
-   }, []);
+   // Delete a user
+   const deleteUser = async (userId: number) => {
+      try {
+         await axios.delete(`${apiUrl}/users/${userId}`);
+         setUsers(users.filter((user) => user._id !== userId));
+      } catch (error) {
+         console.error('Error deleting user:', error);
+      }
+   };
 
    // Create a user
    const createUser = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -63,21 +73,29 @@ const Homepage = () => {
       }
    };
 
-   // Delete a user
-   const deleteUser = async (userId: number) => {
-      try {
-         await axios.delete(`${apiUrl}/users/${userId}`);
-         setUsers(users.filter((user) => user.id !== userId));
-      } catch (error) {
-         console.error('Error deleting user:', error);
-      }
-   };
-
    return (
       <div className="space-y-4 w-full max-w-2xl">
          <h1 className="text-4xl font-bold text-gray-800 text-center pt-20 pb-10">
             User Management App
          </h1>
+
+         {/* Display users */}
+         <div className="space-y-2">
+            {users.map((user) => {
+               return (
+                  <div
+                     key={user.email}
+                     className="flex items-center justify-between bg-white p-4 rounded-lg shadow">
+                     <CardComponent card={user} />
+                     <button
+                        onClick={() => deleteUser(user._id)}
+                        className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded">
+                        Delete User
+                     </button>
+                  </div>
+               );
+            })}
+         </div>
 
          {/* Form to add new user */}
          <form onSubmit={createUser} className="p-4 bg-blue-100 rounded shadow">
@@ -127,24 +145,6 @@ const Homepage = () => {
                Update User
             </button>
          </form>
-
-         {/* Display users */}
-         <div className="space-y-2">
-            {users.map((user) => {
-               return (
-                  <div
-                     key={user._id}
-                     className="flex items-center justify-between bg-white p-4 rounded-lg shadow">
-                     <CardComponent card={user} />
-                     <button
-                        onClick={() => deleteUser(user.id)}
-                        className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded">
-                        Delete User
-                     </button>
-                  </div>
-               );
-            })}
-         </div>
       </div>
    );
 };
