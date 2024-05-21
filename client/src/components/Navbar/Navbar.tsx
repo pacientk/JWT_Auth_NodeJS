@@ -65,7 +65,7 @@ export default function Example() {
             aria-label="Global">
             <div className="flex lg:flex-1">
                <Link href="./" className="-m-1.5 p-1.5">
-                  <span className="sr-only">Your Company</span>
+                  <span className="sr-only">0/1 Combine Logo</span>
                   <Image
                      className="h-4 w-auto"
                      src={'/assets/images/01combine_logo.svg'}
@@ -195,7 +195,7 @@ export default function Example() {
                                        <ChevronDownIcon
                                           className={classNames(
                                              open ? 'rotate-180' : '',
-                                             'h-5 w-5 flex-none'
+                                             'h-5 w-5 flex-none',
                                           )}
                                           aria-hidden="true"
                                        />

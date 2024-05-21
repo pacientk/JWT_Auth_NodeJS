@@ -101,6 +101,15 @@ class UserControler {
          next(e);
       }
    }
+
+   async addUser(req, res, next) {
+      try {
+         const users = await userService.addNewUser(req.body);
+         return res.json(users);
+      } catch (e) {
+         next(e);
+      }
+   }
 }
 
 module.exports = new UserControler();

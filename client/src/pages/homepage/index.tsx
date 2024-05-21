@@ -3,16 +3,17 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 interface User {
-   _id?: number;
+   _id: number;
    id: number;
    name: string;
    email: string;
+   password: string;
 }
 
 const Homepage = () => {
    const apiUrl = process.env.API_URL || 'http://localhost:4000/api';
    const [users, setUsers] = useState<User[]>([]);
-   const [newUser, setNewUser] = useState({ name: '', email: '' });
+   const [newUser, setNewUser] = useState({ name: '', email: '', password: '' });
    const [updateUser, setUpdateUser] = useState({ id: '', name: '', email: '' });
 
    // Fetch users
@@ -43,9 +44,9 @@ const Homepage = () => {
    const createUser = async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       try {
-         const response = await axios.post(`${apiUrl}/users`, newUser);
+         const response = await axios.post(`${apiUrl}/users/addnew`, newUser);
          setUsers([response.data, ...users]);
-         setNewUser({ name: '', email: '' });
+         setNewUser({ name: '', email: '', password: '' });
       } catch (error) {
          console.error('Error creating user:', error);
       }
@@ -105,11 +106,16 @@ const Homepage = () => {
                onChange={(e) => setNewUser({ ...newUser, name: e.target.value })}
                className="mb-2 w-full p-2 border border-gray-300 rounded"
             />
-
             <input
                placeholder="Email"
                value={newUser.email}
                onChange={(e) => setNewUser({ ...newUser, email: e.target.value })}
+               className="mb-2 w-full p-2 border border-gray-300 rounded"
+            />
+            <input
+               placeholder={'Password'}
+               value={newUser.password}
+               onChange={(e) => setNewUser({ ...newUser, password: e.target.value })}
                className="mb-2 w-full p-2 border border-gray-300 rounded"
             />
             <button
