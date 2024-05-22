@@ -1,6 +1,7 @@
 import { CardComponent } from '@/components';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { SvgArrowRight } from '../../assets/svgSources';
 
 interface User {
    _id: number;
@@ -76,22 +77,25 @@ const Homepage = () => {
 
    return (
       <div className={'space-y-4 w-full max-w-2xl'}>
-         <h1 className={'text-4xl font-bold text-gray-800 text-center pt-20 pb-10'}>
+         <h1 className={'text-5xl font-bold text-gray-800 text-center pt-20 pb-10'}>
             User Management App
          </h1>
 
          {/* Display users */}
-         <div className={'space-y-2'}>
+         <div className={'space-y-4'}>
             {users.map((user) => {
                return (
                   <div
                      key={user.email}
-                     className={'flex items-center justify-between bg-white p-4 rounded-lg shadow'}>
+                     className={'flex items-start justify-between bg-gray-500 p-4 rounded-lg'}>
                      <CardComponent card={user} />
                      <button
                         onClick={() => deleteUser(user._id)}
-                        className={'bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded'}>
+                        className={
+                           'flex items-center border-2 border-white text-white rounded py-1 px-4 test group hover:bg-white hover:text-black hover:border-2'
+                        }>
                         Delete User
+                        <SvgArrowRight className={'ms-3 fill-white group-hover:fill-black'} />
                      </button>
                   </div>
                );
