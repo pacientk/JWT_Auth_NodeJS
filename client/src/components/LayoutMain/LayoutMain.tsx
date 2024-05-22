@@ -9,7 +9,7 @@ const LayoutMain: React.FC<IProps> = ({ children }) => {
    return (
       <>
          <Navbar />
-         <main>{children}</main>
+         <main className={'relative'}>{children}</main>
       </>
    );
 };

@@ -75,22 +75,22 @@ const Homepage = () => {
    };
 
    return (
-      <div className="space-y-4 w-full max-w-2xl">
-         <h1 className="text-4xl font-bold text-gray-800 text-center pt-20 pb-10">
+      <div className={'space-y-4 w-full max-w-2xl'}>
+         <h1 className={'text-4xl font-bold text-gray-800 text-center pt-20 pb-10'}>
             User Management App
          </h1>
 
          {/* Display users */}
-         <div className="space-y-2">
+         <div className={'space-y-2'}>
             {users.map((user) => {
                return (
                   <div
                      key={user.email}
-                     className="flex items-center justify-between bg-white p-4 rounded-lg shadow">
+                     className={'flex items-center justify-between bg-white p-4 rounded-lg shadow'}>
                      <CardComponent card={user} />
                      <button
                         onClick={() => deleteUser(user._id)}
-                        className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded">
+                        className={'bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded'}>
                         Delete User
                      </button>
                   </div>
@@ -99,55 +99,55 @@ const Homepage = () => {
          </div>
 
          {/* Form to add new user */}
-         <form onSubmit={createUser} className="p-4 bg-blue-100 rounded shadow">
+         <form onSubmit={createUser} className={'p-4 bg-blue-100 rounded shadow'}>
             <input
                placeholder={'Name'}
                value={newUser.name}
                onChange={(e) => setNewUser({ ...newUser, name: e.target.value })}
-               className="mb-2 w-full p-2 border border-gray-300 rounded"
+               className={'mb-2 w-full p-2 border border-gray-300 rounded'}
             />
             <input
                placeholder="Email"
                value={newUser.email}
                onChange={(e) => setNewUser({ ...newUser, email: e.target.value })}
-               className="mb-2 w-full p-2 border border-gray-300 rounded"
+               className={'mb-2 w-full p-2 border border-gray-300 rounded'}
             />
             <input
                placeholder={'Password'}
                value={newUser.password}
                onChange={(e) => setNewUser({ ...newUser, password: e.target.value })}
-               className="mb-2 w-full p-2 border border-gray-300 rounded"
+               className={'mb-2 w-full p-2 border border-gray-300 rounded'}
             />
             <button
                type="submit"
-               className="w-full p-2 text-white bg-blue-500 rounded hover:bg-blue-600">
+               className={'w-full p-2 text-white bg-blue-500 rounded hover:bg-blue-600'}>
                Add User
             </button>
          </form>
 
          {/* Form to update user */}
-         <form onSubmit={handleUpdateUser} className="p-4 bg-green-100 rounded shadow">
+         <form onSubmit={handleUpdateUser} className={'p-4 bg-green-100 rounded shadow'}>
             <input
                placeholder="User ID"
                value={updateUser.id}
                onChange={(e) => setUpdateUser({ ...updateUser, id: e.target.value })}
-               className="mb-2 w-full p-2 border border-gray-300 rounded"
+               className={'mb-2 w-full p-2 border border-gray-300 rounded'}
             />
             <input
                placeholder="New Name"
                value={updateUser.name}
                onChange={(e) => setUpdateUser({ ...updateUser, name: e.target.value })}
-               className="mb-2 w-full p-2 border border-gray-300 rounded"
+               className={'mb-2 w-full p-2 border border-gray-300 rounded'}
             />
             <input
                placeholder="New Email"
                value={updateUser.email}
                onChange={(e) => setUpdateUser({ ...updateUser, email: e.target.value })}
-               className="mb-2 w-full p-2 border border-gray-300 rounded"
+               className={'mb-2 w-full p-2 border border-gray-300 rounded'}
             />
             <button
                type="submit"
-               className="w-full p-2 text-white bg-green-500 rounded hover:bg-green-600">
+               className={'w-full p-2 text-white bg-green-500 rounded hover:bg-green-600'}>
                Update User
             </button>
          </form>

@@ -59,7 +59,7 @@ export default function Example() {
    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
    return (
-      <header className="bg-white">
+      <header className={'bg-white sticky top-0 z-50'}>
          <nav
             className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
             aria-label="Global">
@@ -68,8 +68,8 @@ export default function Example() {
                   <span className="sr-only">0/1 Combine Logo</span>
                   <Image
                      className="h-4 w-auto"
-                     src={'/assets/images/01combine_logo.svg'}
-                     alt={'0/1 COMBINE'}
+                     src={'/assets/images/01combine_logo_.svg'}
+                     alt={'LOGO 0/1 COMBINE'}
                      width={187}
                      height={20}
                   />
@@ -81,7 +81,7 @@ export default function Example() {
                   className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
                   onClick={() => setMobileMenuOpen(true)}>
                   <span className="sr-only">Open main menu</span>
-                  <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+                  <Bars3Icon className={'h-6 w-6" aria-hidden="true'} />
                </button>
             </div>
             <Popover.Group className="hidden lg:flex lg:gap-x-12">
@@ -119,7 +119,7 @@ export default function Example() {
                                        href={item.href}
                                        className="block font-semibold text-gray-900">
                                        {item.name}
-                                       <span className="absolute inset-0" />
+                                       <span className={'absolute inset-0'} />
                                     </Link>
                                     <p className="mt-1 text-gray-600">{item.description}</p>
                                  </div>
@@ -161,8 +161,8 @@ export default function Example() {
             </div>
          </nav>
 
-         <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-            <div className="fixed inset-0 z-10" />
+         <Dialog as="div" className={'lg:hidden'} open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+            <div className={'fixed inset-0 z-10'} />
             <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                <div className="flex items-center justify-between">
                   <Link href="./" className="-m-1.5 p-1.5">
@@ -180,7 +180,7 @@ export default function Example() {
                      className="-m-2.5 rounded-md p-2.5 text-gray-700"
                      onClick={() => setMobileMenuOpen(false)}>
                      <span className="sr-only">Close menu</span>
-                     <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                     <XMarkIcon className={'h-6 w-6" aria-hidden="true'} />
                   </button>
                </div>
                <div className="mt-6 flow-root">
