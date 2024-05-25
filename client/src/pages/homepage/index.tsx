@@ -76,10 +76,31 @@ const Homepage = () => {
    };
 
    return (
-      <div className={'space-y-4 w-full max-w-7xl'}>
-         <h1 className={'text-5xl line-clamp-3 font-bold text-gray-800 text-center pt-20 pb-10'}>
-            User Management App
-         </h1>
+      <div className={'w-full max-w-7xl'}>
+         <div className={'mb-40'}>
+            <h1
+               className={
+                  'ms-20 my-16 px-9 pt-6 pb-6 rounded bg-white text-8xl text-backgr text-start font-bold inline-block'
+               }>
+               We are creating
+               <br />
+               software solutions
+            </h1>
+
+            <h2 className={'text-xl max-w-lg pt-3 ms-20 font-light text-white'}>
+               Unleash your business potential with our innovative and reliable software solutions
+               that streamline workflow, boost productivity, and empower your success.
+            </h2>
+
+            <button
+               onClick={() => {}}
+               className={
+                  'ms-20 mt-12 flex text-lg items-center border-2 border-white text-white rounded py-2.5 px-4 group hover:bg-white hover:text-black hover:border-2'
+               }>
+               Contact us now
+               <SvgArrowRight className={'ms-3 h-4 fill-white group-hover:fill-black'} />
+            </button>
+         </div>
 
          <div className={'container columns-2 text-pretty indent-4'}>
             <p>
