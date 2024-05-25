@@ -7,13 +7,15 @@ const config: Config = {
          colors: {
             transparent: 'transparent',
             current: 'currentColor',
-            brand: '#F0C40AFF',
+            brand: '#FFD500',
+            backgr: '#253746',
+            backgr_dark: '#1C2D3AFF',
          },
 
-         backgroundImage: {
-            'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-            'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-         },
+         // backgroundImage: {
+         //    'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+         //    'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+         // },
 
          fontFamily: {
             sans: ['Roboto', 'sans-serif'],

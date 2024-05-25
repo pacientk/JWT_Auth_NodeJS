@@ -1,7 +1,7 @@
 import { CardComponent } from '@/components';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { SvgArrowRight } from '../../assets/svgSources';
+import { SvgArrowRight } from '@/assets/svgSources';
 
 interface User {
    _id: number;
@@ -76,10 +76,32 @@ const Homepage = () => {
    };
 
    return (
-      <div className={'space-y-4 w-full max-w-2xl'}>
-         <h1 className={'text-5xl font-bold text-gray-800 text-center pt-20 pb-10'}>
+      <div className={'space-y-4 w-full max-w-7xl'}>
+         <h1 className={'text-5xl line-clamp-3 font-bold text-gray-800 text-center pt-20 pb-10'}>
             User Management App
          </h1>
+
+         <div className={'container columns-2 text-pretty indent-4'}>
+            <p>
+               Etiam sit amet orci eget eros faucibus tincidunt. Donec vitae orci sed dolor rutrum
+               auctor. Vivamus aliquet elit ac nisl. In auctor lobortis lacus.
+            </p>
+            <p>
+               Sed a libero. Curabitur nisi. Fusce risus nisl, viverra et, tempor et, pretium in,
+               sapien. Etiam iaculis nunc ac metus.
+            </p>
+         </div>
+
+         <div className={'grid grid-cols-8 gap-4'}>
+            <div className={'border-amber-950 border'}>qwe</div>
+            <div className={'border-amber-950 border'}>qwe</div>
+            <div className={'border-amber-950 border'}>qwe</div>
+            <div className={'border-amber-950 border'}>qwe</div>
+            <div className={'border-amber-950 border'}>qwe</div>
+            <div className={'border-amber-950 border'}>qwe</div>
+            <div className={'border-amber-950 border'}>qwe</div>
+            <div className={'border-amber-950 border'}>qwe</div>
+         </div>
 
          {/* Display users */}
          <div className={'space-y-4'}>
@@ -95,7 +117,7 @@ const Homepage = () => {
                            'flex items-center border-2 border-white text-white rounded py-1 px-4 test group hover:bg-white hover:text-black hover:border-2'
                         }>
                         Delete User
-                        <SvgArrowRight className={'ms-3 fill-white group-hover:fill-black'} />
+                        <SvgArrowRight className={'ms-3 h-3 fill-white group-hover:fill-black'} />
                      </button>
                   </div>
                );
@@ -155,6 +177,8 @@ const Homepage = () => {
                Update User
             </button>
          </form>
+
+         <div id={'technologies'}>technologies</div>
       </div>
    );
 };
