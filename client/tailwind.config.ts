@@ -18,7 +18,11 @@ const config: Config = {
          // },
 
          fontFamily: {
-            sans: ['Roboto', 'sans-serif'],
+            sans: ['Noto Sans', 'sans-serif'],
+            openSans: ['Open Sans', 'sans-serif'],
+            noto: ['Noto Sans', 'sans-serif'],
+            notoHebrew: ['Noto Sans Hebrew', 'sans-serif'],
+            notoArabic: ['Noto Sans Arabic', 'sans-serif'],
          },
       },
    },

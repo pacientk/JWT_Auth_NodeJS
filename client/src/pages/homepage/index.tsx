@@ -77,17 +77,17 @@ const Homepage = () => {
 
    return (
       <div className={'w-full max-w-7xl'}>
-         <div className={'mb-40'}>
+         <div className={'my-10 md:my-20 justify-center'}>
             <h1
                className={
-                  'ms-20 my-16 px-9 pt-6 pb-6 rounded bg-white text-8xl text-backgr text-start font-bold inline-block'
+                  'sm:mx-20 mx-10 my-16 px-9 pt-6 pb-6 rounded bg-white lg:text-8xl md:text-7xl sm:text-7xl text-6xl tracking-tight text-backgr text-center md:text-start font-noto italic font-bold inline-block'
                }>
                We are creating
                <br />
-               software solutions
+               sof{'\u200A'}tware solutions
             </h1>
 
-            <h2 className={'text-xl max-w-lg pt-3 ms-20 font-light text-white'}>
+            <h2 className={'text-lg max-w-lg pt-3 sm:mx-20 mx-10 font-noto font-light text-white'}>
                Unleash your business potential with our innovative and reliable software solutions
                that streamline workflow, boost productivity, and empower your success.
             </h2>
@@ -95,11 +95,31 @@ const Homepage = () => {
             <button
                onClick={() => {}}
                className={
-                  'ms-20 mt-12 flex text-lg items-center border-2 border-white text-white rounded py-2.5 px-4 group hover:bg-white hover:text-black hover:border-2'
+                  'sm:mx-20 mx-10 mt-12 flex text-lg items-center border-2 border-white text-white rounded pt-2.5 pb-2 px-4 group hover:bg-white hover:text-black hover:border-2'
                }>
                Contact us now
                <SvgArrowRight className={'ms-3 h-4 fill-white group-hover:fill-black'} />
             </button>
+         </div>
+
+         <div className={'my-20'}>
+            <h1
+               className={
+                  'my-2 px-9 pt-6 pb-6 rounded text-center lg:text-7xl md:text-6xl sm:text-6xl text-5xl tracking-tight text-white font-noto font-bold'
+               }>
+               Technologies
+            </h1>
+
+            <h2 className={'text-lg font-noto font-light text-white text-center'}>
+               Unleash your business potential with our innovative
+            </h2>
+
+            <div className={'grid grid-cols-2 xs:grid-cols-1 gap-4 my-20'}>
+               <div className={'border-amber-950 border'}>qwe</div>
+               <div className={'border-amber-950 border'}>qwe</div>
+               <div className={'border-amber-950 border'}>qwe</div>
+               <div className={'border-amber-950 border'}>qwe</div>
+            </div>
          </div>
 
          <div className={'container columns-2 text-pretty indent-4'}>
