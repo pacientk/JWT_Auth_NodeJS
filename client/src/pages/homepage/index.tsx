@@ -87,7 +87,10 @@ const Homepage = () => {
                sof{'\u200A'}tware solutions
             </h1>
 
-            <h2 className={'text-lg max-w-lg pt-3 sm:mx-20 mx-10 font-noto font-light text-white'}>
+            <h2
+               className={
+                  'leading-relaxed text-lg max-w-lg pt-3 sm:mx-20 mx-10 font-noto font-light text-white'
+               }>
                Unleash your business potential with our innovative and reliable software solutions
                that streamline workflow, boost productivity, and empower your success.
             </h2>
@@ -102,10 +105,11 @@ const Homepage = () => {
             </button>
          </div>
 
+         {/*Technologies*/}
          <div className={'my-20'}>
             <h1
                className={
-                  'my-2 px-9 pt-6 pb-6 rounded text-center lg:text-7xl md:text-6xl sm:text-6xl text-5xl tracking-tight text-white font-noto font-bold'
+                  'px-9 pt-6 pb-6 rounded text-center lg:text-7xl md:text-6xl sm:text-6xl text-5xl tracking-tight text-white font-noto font-bold'
                }>
                Technologies
             </h1>
@@ -114,11 +118,85 @@ const Homepage = () => {
                Unleash your business potential with our innovative
             </h2>
 
-            <div className={'grid grid-cols-2 xs:grid-cols-1 gap-4 my-20'}>
-               <div className={'border-amber-950 border'}>qwe</div>
-               <div className={'border-amber-950 border'}>qwe</div>
-               <div className={'border-amber-950 border'}>qwe</div>
-               <div className={'border-amber-950 border'}>qwe</div>
+            <div className={'grid grid-cols-1 sm:grid-cols-2 gap-4'}>
+               <div className={' my-10'}>
+                  <h3 className={'text-3xl text-white font-light mb-3'}>Front End</h3>
+
+                  <div className={'bg-white text-backgr text-xl inline-block px-1 my-1 me-3'}>
+                     HTML5
+                  </div>
+                  <div className={'bg-white text-backgr text-xl inline-block px-1 my-1 me-3'}>
+                     SCSS
+                  </div>
+                  <div className={'bg-white text-backgr text-xl inline-block px-1 my-1 me-3'}>
+                     JavaScript
+                  </div>
+                  <div className={'bg-white text-backgr text-xl inline-block px-1 my-1 me-3'}>
+                     Bootstrap
+                  </div>
+                  <div className={'text-white font-light text-xl inline-block px-1'}>and more</div>
+                  <h4 className={'text-lg text-white font-light mt-2'}>
+                     Responsive websites for any kind of devices
+                  </h4>
+               </div>
+
+               <div className={' my-10'}>
+                  <h3 className={'text-3xl text-white font-light mb-3'}>Mobile</h3>
+                  <div className={'bg-white text-backgr text-xl inline-block px-1 my-1 me-3'}>
+                     React Native
+                  </div>
+                  <div className={'bg-white text-backgr text-xl inline-block px-1 my-1 me-3'}>
+                     Flutter
+                  </div>
+                  <div className={'bg-white text-backgr text-xl inline-block px-1 my-1 me-3'}>
+                     Android
+                  </div>
+                  <div className={'bg-white text-backgr text-xl inline-block px-1 my-1 me-3'}>
+                     iOS
+                  </div>
+                  <h4 className={'text-lg text-white font-light mt-2'}>
+                     Cross-platform development for Android and iOS
+                  </h4>
+               </div>
+
+               <div className={' my-10'}>
+                  <h3 className={'text-3xl text-white font-light mb-3'}>Back End</h3>
+                  <div className={'bg-white text-backgr text-xl inline-block px-1 my-1 me-3'}>
+                     NodeJS
+                  </div>
+                  <div className={'bg-white text-backgr text-xl inline-block px-1 my-1 me-3'}>
+                     .NET
+                  </div>
+                  <div className={'bg-white text-backgr text-xl inline-block px-1 my-1 me-3'}>
+                     Umbraco
+                  </div>
+                  <div className={'bg-white text-backgr text-xl inline-block px-1 my-1 me-3'}>
+                     CMS
+                  </div>
+                  <div className={'text-white font-light text-xl inline-block px-1'}>
+                     and more other
+                  </div>
+                  <h4 className={'text-lg text-white font-light mt-2'}>
+                     Only the most reliable and optimal server solutions
+                  </h4>
+               </div>
+
+               <div className={'my-10'}>
+                  <h3 className={'text-3xl text-white font-light mb-3'}>Cloud technologies</h3>
+                  <div className={'bg-white text-backgr text-xl inline-block px-1 my-1 me-3'}>
+                     AWS
+                  </div>
+                  <div className={'bg-white text-backgr text-xl inline-block px-1 my-1 me-3'}>
+                     Azure
+                  </div>
+                  <div className={'bg-white text-backgr text-xl inline-block px-1 my-1 me-3'}>
+                     GoogleCloud
+                  </div>
+                  <div className={'text-white font-light text-xl inline-block px-1'}>and other</div>
+                  <h4 className={'text-lg text-white font-light mt-2'}>
+                     The most advanced cloud technologies for development
+                  </h4>
+               </div>
             </div>
          </div>
 
