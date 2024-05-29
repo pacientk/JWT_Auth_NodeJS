@@ -16,10 +16,11 @@
 
 body {
     color: rgb(var(--foreground-rgb));
+    background-color: rgb(var(--foreground-rgb));
     /*background: linear-gradient(#e66465, #9198e5);*/
     /*background: linear-gradient(to left, #333, #333 50%, #eee 75%, #333 75%);*/
-    background: linear-gradient(
-            to bottom,
-            rgb(var(--background-main-dark-rgb)), rgb(var(--background-main-rgb))
-    ) rgb(var(--background-main-rgb));
+    /*background: linear-gradient(*/
+    /*        to bottom,*/
+    /*        rgb(var(--background-main-dark-rgb)), rgb(var(--background-main-rgb))*/
+    /*) rgb(var(--background-main-rgb));*/
 }

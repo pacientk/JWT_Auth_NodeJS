@@ -7,7 +7,7 @@ import Link from 'next/link';
 const navigation = [
    { name: `About${'\u00A0'}us`, href: '/aboutus', current: true },
    { name: 'Technologies', href: '#technologies', current: false },
-   { name: `Contact${'\u00A0'}us`, href: '/contacts', current: false },
+   { name: `Contact${'\u00A0'}us`, href: '/testPage', current: false },
 ];
 
 const classNames = (...classes: string[]) => classes.filter(Boolean).join(' ');
