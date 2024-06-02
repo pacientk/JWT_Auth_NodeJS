@@ -18,7 +18,7 @@ export default function Example() {
    useEffect(() => {
       const handleScroll = () => {
          if (window.scrollY > 50) {
-            setBgColor('bg-backgr_dark');
+            setBgColor('bg-black');
          } else {
             setBgColor('bg-transparent');
          }
@@ -60,16 +60,16 @@ export default function Example() {
                            </div>
                         </div>
                         <div className="hidden sm:ml-6 lg:block">
-                           <div className="flex space-x-4">
+                           <div className="flex space-x-6 pt-1">
                               {navigation.map((item) => (
                                  <a
                                     key={item.name}
                                     href={item.href}
                                     className={classNames(
                                        item.current
-                                          ? 'bg-backgr text-white'
-                                          : 'text-white hover:bg-backgr hover:text-white',
-                                       'rounded-md px-3 py-2 text-base font-light',
+                                          ? 'bg-white text-black font-normal'
+                                          : 'text-white hover:bg-white hover:text-black font-light',
+                                       'leading-5 rounded-full px-3 pt-1.5 pb-1 text-sm font-light',
                                     )}
                                     aria-current={item.current ? 'page' : undefined}>
                                     {item.name}

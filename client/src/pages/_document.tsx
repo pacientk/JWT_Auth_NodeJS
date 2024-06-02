@@ -1,6 +1,5 @@
 import { Head, Html, Main, NextScript } from 'next/document';
 import React from 'react';
-import { backgrString } from '@/utils/constants';
 
 export default function _document() {
    return (
@@ -25,13 +24,13 @@ export default function _document() {
             />
          </Head>
 
-         <body className={'h-full bg-bgColored bg-cover bg-no-repeat bg-black'}>
-            <div
-               className={
-                  'absolute opacity-40 top-0 left-0 bottom-0 font-openSans slashed-zero text-gray-900 z-0 text-xs text-pretty text-center'
-               }>
-               {backgrString}
-            </div>
+         <body className={'h-full bg-bgColored bg-cover bg-black'}>
+            {/*<div*/}
+            {/*   className={*/}
+            {/*      'absolute opacity-40 top-0 left-0 bottom-0 font-openSans slashed-zero text-gray-800 z-0 text-xs text-pretty text-center'*/}
+            {/*   }>*/}
+            {/*   {backgrString}*/}
+            {/*</div>*/}
             <Main />
             <NextScript />
          </body>

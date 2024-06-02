@@ -12,7 +12,7 @@ const config: Config = {
             backgr_dark: '#1C2D3AFF',
          },
          backgroundImage: {
-            bgColored: 'url(/assets/images/bg-colored_01.png)',
+            bgColored: 'url(/assets/images/bg-colored_full.webp)',
          },
 
          // backgroundImage: {
