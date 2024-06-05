@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
 import { SvgArrowRight } from '@/assets/svgSources';
 
@@ -15,6 +16,43 @@ const Homepage = () => {
    const [users, setUsers] = useState<User[]>([]);
    const [newUser, setNewUser] = useState({ name: '', email: '', password: '' });
    const [updateUser, setUpdateUser] = useState({ id: '', name: '', email: '' });
+
+   const contentSections = {
+      technologies: {
+         title: 'Technologies',
+         subTitle: 'Unleash your business potential with our innovative',
+         sections: [
+            {
+               title: 'Front End',
+               techNames: ['HTML5', 'SCSS', 'JavaScript', 'Bootstrap'],
+               extText: 'and more',
+               text: 'Responsive websites for any kind of devices',
+               img: '/assets/images/thec_items_01_01.png',
+            },
+            {
+               title: 'Mobile',
+               techNames: ['React Native', 'Flutter', 'Android', 'iOS'],
+               extText: '',
+               text: 'Cross-platform development for Android and iOS',
+               img: '/assets/images/thec_items_03_03.png',
+            },
+            {
+               title: 'Back End',
+               techNames: ['NodeJS', '.NET', 'Umbraco', 'CMS'],
+               extText: 'and many others',
+               text: 'Only the most reliable and optimal server solutions',
+               img: '/assets/images/thec_items_08_08.png',
+            },
+            {
+               title: 'Cloud technologies',
+               techNames: ['AWS', 'Azure', 'GoogleCloud'],
+               extText: 'and many others',
+               text: 'The most advanced cloud technologies for development',
+               img: '/assets/images/thec_items_10_10.png',
+            },
+         ],
+      },
+   };
 
    // Fetch users
    useEffect(() => {
@@ -75,11 +113,13 @@ const Homepage = () => {
    };
 
    return (
-      <div>
-         <section className={'w-full max-w-6xl mx-auto mt-16 sm:mt-40 sm:mb-36'}>
+      <div
+         style={{ backgroundPosition: '100% 8%' }}
+         className={'bg-contain bg-no-repeat bg-[url(/assets/images/bg_img.webp)]'}>
+         <section className={'w-full max-w-6xl mx-auto mt-16 sm:mt-0 sm:mb-36'}>
             <h1
                className={
-                  'my-16 pt-6 pb-0 px-2 lg:text-8xl md:text-7xl sm:text-7xl text-6xl tracking-tight text-white text-center font-semibold'
+                  'mt-16 mb-12 pt-6 pb-0 px-2 lg:text-8xl md:text-7xl sm:text-7xl text-6xl tracking-tight text-white text-center font-semibold'
                }>
                We{'\u00A0'}are creating
                <br />
@@ -107,153 +147,43 @@ const Homepage = () => {
             </div>
          </section>
 
-         <section className={'w-full max-w-6xl mx-auto px-4'}>
+         <section className={'w-full mt-[400px] max-w-6xl mx-auto px-4'}>
             {/*Technologies*/}
-            <div className={'mt-20 mb-5'}>
-               <h1
-                  className={
-                     'px-9 pt-6 pb-6 rounded text-center lg:text-7xl md:text-6xl sm:text-6xl text-5xl tracking-tight text-white font-semibold'
-                  }>
-                  Technologies
-               </h1>
+            <h1
+               className={
+                  'px-9 pt-6 pb-6 text-center lg:text-7xl md:text-6xl sm:text-6xl text-5xl tracking-tight text-white font-semibold'
+               }>
+               {contentSections.technologies.title}
+            </h1>
 
-               <h2 className={'text-white text-center text-lg font-light'}>
-                  Unleash your business potential with our innovative
-               </h2>
+            <h2 className={'text-white text-center text-lg font-light'}>
+               {contentSections.technologies.subTitle}
+            </h2>
 
-               <div className={'grid grid-cols-1 sm:grid-cols-2 gap-x-16'}>
-                  <div className={'my-10'}>
-                     <h3 className={'text-3xl text-white font-light mb-3'}>Front End</h3>
-
-                     <div
-                        className={
-                           'bg-white text-backgr text-xl inline-block pt-0.5 px-1 my-1 me-3'
-                        }>
-                        HTML5
-                     </div>
-                     <div
-                        className={
-                           'bg-white text-backgr text-xl inline-block pt-0.5 px-1 my-1 me-3'
-                        }>
-                        SCSS
-                     </div>
-                     <div
-                        className={
-                           'bg-white text-backgr text-xl inline-block pt-0.5 px-1 my-1 me-3'
-                        }>
-                        JavaScript
-                     </div>
-                     <div
-                        className={
-                           'bg-white text-backgr text-xl inline-block pt-0.5 px-1 my-1 me-3'
-                        }>
-                        Bootstrap
-                     </div>
+            <div className={'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-16'}>
+               {contentSections.technologies.sections.map((item) => (
+                  <div key={uuidv4()} className="mt-24 overflow-hidden text-center">
+                     <img className="max-h-36 mb-8 m-auto" src={item.img} alt="" />
+                     <h3 className={'mb-6 text-3xl z-10 text-white font-semibold'}>{item.title}</h3>
+                     {item.techNames.map((name, i) => (
+                        <div
+                           key={uuidv4()}
+                           className={`bg-white text-backgr text-xl rounded-full font-semibold inline-block py-0.5 px-2.5 my-1 ${
+                              item.techNames.length - 1 !== i ? 'me-3' : ''
+                           }`}>
+                           {name}
+                        </div>
+                     ))}
                      <div className={'text-white font-light text-xl inline-block px-1'}>
-                        and more
+                        {item.extText}
                      </div>
-                     <h4 className={'text-lg text-white font-light mt-2'}>
-                        Responsive websites for any kind of devices
-                     </h4>
+                     <h4 className={'text-lg text-white font-light mt-2'}>{item.text}</h4>
                   </div>
-
-                  <div className={' my-10'}>
-                     <h3 className={'text-3xl text-white font-light mb-3'}>Mobile</h3>
-                     <div
-                        className={
-                           'bg-white text-backgr text-xl inline-block pt-0.5 px-1 my-1 me-3'
-                        }>
-                        React Native
-                     </div>
-                     <div
-                        className={
-                           'bg-white text-backgr text-xl inline-block pt-0.5 px-1 my-1 me-3'
-                        }>
-                        Flutter
-                     </div>
-                     <div
-                        className={
-                           'bg-white text-backgr text-xl inline-block pt-0.5 px-1 my-1 me-3'
-                        }>
-                        Android
-                     </div>
-                     <div
-                        className={
-                           'bg-white text-backgr text-xl inline-block pt-0.5 px-1 my-1 me-3'
-                        }>
-                        iOS
-                     </div>
-                     <h4 className={'text-lg text-white font-light mt-2'}>
-                        Cross-platform development for Android and iOS
-                     </h4>
-                  </div>
-
-                  <div className={' my-10'}>
-                     <h3 className={'text-3xl text-white font-light mb-3'}>Back End</h3>
-                     <div
-                        className={
-                           'bg-white text-backgr text-xl inline-block pt-0.5 px-1 my-1 me-3'
-                        }>
-                        NodeJS
-                     </div>
-                     <div
-                        className={
-                           'bg-white text-backgr text-xl inline-block pt-0.5 px-1 my-1 me-3'
-                        }>
-                        .NET
-                     </div>
-                     <div
-                        className={
-                           'bg-white text-backgr text-xl inline-block pt-0.5 px-1 my-1 me-3'
-                        }>
-                        Umbraco
-                     </div>
-                     <div
-                        className={
-                           'bg-white text-backgr text-xl inline-block pt-0.5 px-1 my-1 me-3'
-                        }>
-                        CMS
-                     </div>
-                     <div className={'text-white font-light text-xl inline-block px-1'}>
-                        and many others
-                     </div>
-                     <h4 className={'text-lg text-white font-light mt-2'}>
-                        Only the most reliable and optimal server solutions
-                     </h4>
-                  </div>
-
-                  <div className={'my-10'}>
-                     <h3 className={'text-3xl text-white font-light mb-3'}>Cloud technologies</h3>
-                     <div
-                        className={
-                           'bg-white text-backgr text-xl inline-block pt-0.5 px-1 my-1 me-3'
-                        }>
-                        AWS
-                     </div>
-                     <div
-                        className={
-                           'bg-white text-backgr text-xl inline-block pt-0.5 px-1 my-1 me-3'
-                        }>
-                        Azure
-                     </div>
-                     <div
-                        className={
-                           'bg-white text-backgr text-xl inline-block pt-0.5 px-1 my-1 me-3'
-                        }>
-                        GoogleCloud
-                     </div>
-                     <div className={'text-white font-light text-xl inline-block px-1'}>
-                        and many others
-                     </div>
-                     <h4 className={'text-lg text-white font-light mt-2'}>
-                        The most advanced cloud technologies for development
-                     </h4>
-                  </div>
-               </div>
+               ))}
             </div>
 
             {/*SubTitile Section*/}
-            <div className={'flex justify-center mt-5 mb-10'}>
+            <div className={'flex justify-center mt-16'}>
                <h2 className={'w-2/3 justify-center text-lg font-light text-white text-center'}>
                   Unleash your business potential with our innovative and reliable software
                   solutions that streamline workflow, boost productivity, and empower your success.
@@ -271,7 +201,7 @@ const Homepage = () => {
                </h1>
             </div>
 
-            <div className={'container columns-2 text-pretty gap-x-16 my-16'}>
+            <div className={'container sm:columns-2 text-pretty gap-x-16 my-16'}>
                <p className={'text-sm leading-loose text-white font-extralight text-wrap'}>
                   Welcome to the world of innovation and software development with 0/1{'\u00A0'}
                   COMBINE{'\u00A0'}
@@ -320,7 +250,7 @@ const Homepage = () => {
                </h1>
             </div>
 
-            <div className={'grid grid-cols-1 sm:grid-cols-2 gap-x-16'}>
+            <div className={'grid grid-cols-1 md:grid-cols-2 gap-x-16'}>
                <div className={'text-white'}>
                   <div className="grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-4">
                      <div className="sm:col-span-2">
@@ -335,7 +265,7 @@ const Homepage = () => {
                               name="firstName"
                               id="firstName"
                               autoComplete="given-name"
-                              className="block w-full bg-gray-600 ring-1 ring-gray-500 rounded-md border-0 p-2.5 text-white placeholder:text-gray-400 sm:leading-6"
+                              className="block w-full bg-gray-600 ring-1 ring-white rounded-md border-0 p-2.5 text-white placeholder:text-gray-400 sm:leading-6"
                            />
                         </div>
                      </div>
@@ -352,7 +282,7 @@ const Homepage = () => {
                               name="lastName"
                               id="lastName"
                               autoComplete="family-name"
-                              className="block w-full bg-gray-600 ring-1 ring-gray-500 rounded-md border-0 p-2.5 text-white placeholder:text-gray-400 sm:leading-6"
+                              className="block w-full bg-gray-600 ring-1 ring-white rounded-md border-0 p-2.5 text-white placeholder:text-gray-400 sm:leading-6"
                            />
                         </div>
                      </div>
@@ -369,7 +299,7 @@ const Homepage = () => {
                               name="email"
                               type="email"
                               autoComplete="email"
-                              className="block w-full bg-gray-600 ring-1 ring-gray-500 rounded-md border-0 p-2.5 text-white placeholder:text-gray-400 sm:leading-6"
+                              className="block w-full bg-gray-600 ring-1 ring-white rounded-md border-0 p-2.5 text-white placeholder:text-gray-400 sm:leading-6"
                            />
                         </div>
                      </div>
@@ -386,7 +316,7 @@ const Homepage = () => {
                               name="phone"
                               type="tel"
                               autoComplete="phone"
-                              className="block w-full bg-gray-600 ring-1 ring-gray-500 rounded-md border-0 p-2.5 text-white placeholder:text-gray-400 sm:leading-6"
+                              className="block w-full bg-gray-600 ring-1 ring-white rounded-md border-0 p-2.5 text-white placeholder:text-gray-400 sm:leading-6"
                            />
                         </div>
                      </div>
@@ -402,7 +332,7 @@ const Homepage = () => {
                               id="country"
                               name="country"
                               autoComplete="country-name"
-                              className="block w-full bg-gray-600 ring-1 ring-gray-500 rounded-md border-0 p-2.5 text-white placeholder:text-gray-400 sm:leading-6">
+                              className="block w-full bg-gray-600 ring-1 ring-white rounded-md border-0 p-2.5 text-white placeholder:text-gray-400 sm:leading-6">
                               <option>Website quote</option>
                               <option>Mobile application quote</option>
                               <option>Customer service</option>
@@ -421,7 +351,7 @@ const Homepage = () => {
                               id="message"
                               name="message"
                               rows={3}
-                              className="block w-full bg-gray-600 ring-1 ring-gray-500 rounded-md border-0 p-2.5 text-white placeholder:text-gray-400 sm:leading-6"
+                              className="block w-full bg-gray-600 ring-1 ring-white rounded-md border-0 p-2.5 text-white placeholder:text-gray-400 sm:leading-6"
                               defaultValue={''}
                            />
                         </div>
