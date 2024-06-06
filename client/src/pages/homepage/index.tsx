@@ -27,7 +27,7 @@ const Homepage = () => {
                techNames: ['HTML5', 'SCSS', 'JavaScript', 'Bootstrap'],
                extText: 'and more',
                text: 'Responsive websites for any kind of devices',
-               img: '/assets/images/thec_items_01_01.png',
+               img: '/assets/images/thec_items_08_08.png',
             },
             {
                title: 'Mobile',
@@ -41,7 +41,21 @@ const Homepage = () => {
                techNames: ['NodeJS', '.NET', 'Umbraco', 'CMS'],
                extText: 'and many others',
                text: 'Only the most reliable and optimal server solutions',
-               img: '/assets/images/thec_items_08_08.png',
+               img: '/assets/images/thec_items_01_01.png',
+            },
+            {
+               title: 'Cloud technologies',
+               techNames: ['AWS', 'Azure', 'GoogleCloud'],
+               extText: 'and many others',
+               text: 'The most advanced cloud technologies for development',
+               img: '/assets/images/thec_items_10_10.png',
+            },
+            {
+               title: 'Back End',
+               techNames: ['NodeJS', '.NET', 'Umbraco', 'CMS'],
+               extText: 'and many others',
+               text: 'Only the most reliable and optimal server solutions',
+               img: '/assets/images/thec_items_01_01.png',
             },
             {
                title: 'Cloud technologies',
@@ -114,8 +128,9 @@ const Homepage = () => {
 
    return (
       <div
-         style={{ backgroundPosition: '100% 8%' }}
-         className={'bg-contain bg-no-repeat bg-[url(/assets/images/bg_img.webp)]'}>
+         className={
+            'bg-contain bg-no-repeat bg-none sm:bg-[url(/assets/images/bg_img.webp)] sm:bg-[center_top_18rem] md:bg-[center_top_24rem] lg:bg-[center_top_18rem] xl:bg-[center_top_16rem]'
+         }>
          <section className={'w-full max-w-6xl mx-auto mt-16 sm:mt-0 sm:mb-36'}>
             <h1
                className={
@@ -147,7 +162,10 @@ const Homepage = () => {
             </div>
          </section>
 
-         <section className={'w-full mt-[400px] max-w-6xl mx-auto px-4'}>
+         <section
+            className={
+               'w-full mt-[150px] sm:mt-[300px] md:mt-[400px] lg:mt-[380px] xl:mt-[550px] max-w-6xl mx-auto px-4'
+            }>
             {/*Technologies*/}
             <h1
                className={
