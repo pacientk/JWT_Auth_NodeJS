@@ -13,14 +13,19 @@ const navigation = [
 const classNames = (...classes: string[]) => classes.filter(Boolean).join(' ');
 
 export default function Example() {
-   const [bgColor, setBgColor] = useState('bg-transparent');
+   const [containerStyle, setContainerStyle] = useState({});
 
    useEffect(() => {
       const handleScroll = () => {
          if (window.scrollY > 50) {
-            setBgColor('bg-black');
+            setContainerStyle({
+               // boxShadow: '50px 8px 32px 0 rgba( 132,37,173, 1 )',
+               // borderBottom: '1px solid rgba( 255,255, 255, 0.18 )',
+               backdropFilter: 'blur(16px)',
+               backgroundColor: 'rgb(0, 0, 0, 0.5)',
+            });
          } else {
-            setBgColor('bg-transparent');
+            setContainerStyle({});
          }
       };
 
@@ -34,7 +39,8 @@ export default function Example() {
    return (
       <Disclosure
          as="nav"
-         className={`sticky top-0 z-50 scroll-m-2d transition-colors duration-300 ${bgColor}`}>
+         style={containerStyle}
+         className={'sticky top-0 z-50 scroll-m-2d transition-colors duration-300 bg-transparent'}>
          {({ open }) => (
             <>
                <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -60,7 +66,7 @@ export default function Example() {
                            </div>
                         </div>
                         <div className="hidden sm:ml-6 lg:block">
-                           <div className="flex space-x-6 pt-1">
+                           <div className="flex space-x-6 pt-1 pb-1 mt-1">
                               {navigation.map((item) => (
                                  <a
                                     key={item.name}
@@ -69,7 +75,7 @@ export default function Example() {
                                        item.current
                                           ? 'bg-white text-black font-normal'
                                           : 'text-white hover:bg-white hover:text-black font-light',
-                                       'leading-5 rounded-full px-3 pt-1.5 pb-1 text-sm font-light',
+                                       'leading-5 rounded-full px-3 pt-1.5 pb-1.5 text-sm font-light',
                                     )}
                                     aria-current={item.current ? 'page' : undefined}>
                                     {item.name}
