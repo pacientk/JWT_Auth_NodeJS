@@ -426,10 +426,10 @@ const Homepage = () => {
 
          <section
             style={{
-               boxShadow: '0 8px 32px 50px rgba( 132,37,173, 0.25 )',
+               // boxShadow: '0 8px 32px 50px rgba( 132,37,173, 0.25 )',
                borderTop: '1px solid rgba( 255,255, 255, 0.18 )',
             }}
-            className={'w-full mt-48 backdrop-blur-lg bg-black bg-opacity-30'}>
+            className={'w-full mt-48 backdrop-blur-lg bg-black bg-opacity-60'}>
             <div className={'max-w-6xl mx-auto px-4 mb-48'}>
                <div className={'grid grid-cols-3 gap-x-0 p-20'}>
                   <div>
