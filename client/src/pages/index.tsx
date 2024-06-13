@@ -1,8 +1,28 @@
 import React from 'react';
 import Head from 'next/head';
 import Homepage from '@/pages/homepage';
+import type { GetStaticProps, InferGetStaticPropsType } from 'next';
 
-export default function Home() {
+type Repo = {
+   name: string;
+   stargazers_count: number;
+};
+
+/**
+ * If you export a function called getStaticProps (Static Site Generation) from a page,
+ * Next.js will pre-render this page at build time using the props returned by getStaticProps.
+ * See: https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-props
+ */
+
+export const getStaticProps = (async (context) => {
+   const res = await fetch('https://api.github.com/repos/vercel/next.js');
+   const repo = await res.json();
+   return { props: { repo } };
+}) satisfies GetStaticProps<{
+   repo: Repo;
+}>;
+
+export default function Home({ repo }: InferGetStaticPropsType<typeof getStaticProps>) {
    return (
       <main>
          <Head>

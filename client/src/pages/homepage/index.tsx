@@ -28,42 +28,42 @@ const Homepage = () => {
                techNames: ['UI/UX design', 'Frameworks JS', 'HTML5', 'SCSS', 'JavaScript'],
                extText: 'and more',
                text: 'Responsive websites for any kind of devices',
-               img: '/assets/images/thec_items_08_08.png',
-            },
-            {
-               title: 'Mobile / Platforms',
-               techNames: ['React', 'React Native', 'Electron', 'Flutter', 'Android', 'iOS'],
-               extText: 'and many others',
-               text: 'Cross-platform development for Android and iOS',
-               img: '/assets/images/thec_items_03_03.png',
+               img: '/assets/images/002.jpg',
             },
             {
                title: 'Back End',
                techNames: ['NodeJS', 'MongoDB', 'PostgreSQL', 'Umbraco', 'Wordpress', 'CMS'],
                extText: '',
                text: 'Only the most reliable and optimal server solutions',
-               img: '/assets/images/thec_items_01_01.png',
+               img: '/assets/images/003.png',
+            },
+            {
+               title: 'Mobile / Platforms',
+               techNames: ['React', 'React Native', 'Electron', 'Flutter', 'Android', 'iOS'],
+               extText: 'and many others',
+               text: 'Cross-platform development for Android and iOS',
+               img: '/assets/images/001.jpg',
             },
             {
                title: 'Cloud technologies',
-               techNames: ['AWS', 'Azure', 'GoogleCloud'],
+               techNames: ['AWS', 'Azure', 'GoogleCloud', 'DigitalOcean'],
                extText: 'and many others',
                text: 'The most advanced cloud technologies for development',
                img: '/assets/images/thec_items_10_10.png',
-            },
-            {
-               title: 'Projects support',
-               techNames: ['Jira', 'GitHub', 'Azure'],
-               extText: 'and other',
-               text: 'Comprehensive Project Support for Your Success',
-               img: '/assets/images/thec_items_06_01.png',
             },
             {
                title: 'LLM / AI',
-               techNames: ['ChatGPT', '', ''],
+               techNames: ['Integration', 'Bots', 'Chats', 'Analitics'],
                extText: 'and many others',
                text: 'The most advanced cloud technologies for development',
                img: '/assets/images/thec_items_10_10.png',
+            },
+            {
+               title: 'Management',
+               techNames: ['Jira', 'GitHub', 'Azure\u00A0DevOPs'],
+               extText: 'and other',
+               text: 'Comprehensive Project Support for Your Success',
+               img: '/assets/images/thec_items_06_01.png',
             },
          ],
       },
@@ -182,13 +182,13 @@ const Homepage = () => {
             <div className={'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-16'}>
                {contentSections.technologies.sections.map((item) => (
                   <div key={uuidv4()} className="mt-24 overflow-hidden text-center">
-                     <Image
-                        className={'mb-8 m-auto'}
-                        src={item.img}
-                        alt={item.extText}
-                        width={144}
-                        height={144}
-                     />
+                     {/*<Image*/}
+                     {/*   className={'mb-8 m-auto'}*/}
+                     {/*   src={item.img}*/}
+                     {/*   alt={item.extText}*/}
+                     {/*   width={144}*/}
+                     {/*   height={144}*/}
+                     {/*/>*/}
                      <h3 className={'mb-6 text-3xl z-10 text-white font-semibold'}>{item.title}</h3>
                      {item.techNames.map((name, i) => (
                         <div
@@ -216,54 +216,54 @@ const Homepage = () => {
             </div>
          </section>
 
-         {/*<section className={'w-full max-w-6xl mx-auto px-4 mb-48'}>*/}
-         {/*   <div className={'mt-32 mb-5'}>*/}
-         {/*      <h1*/}
-         {/*         className={*/}
-         {/*            'px-9 pt-6 pb-6 rounded text-center lg:text-7xl md:text-6xl sm:text-6xl text-5xl tracking-tight text-white font-semibold'*/}
-         {/*         }>*/}
-         {/*         About us*/}
-         {/*      </h1>*/}
-         {/*   </div>*/}
+         <section className={'w-full max-w-6xl mx-auto px-4 mb-48'}>
+            <div className={'mt-32 mb-5'}>
+               <h1
+                  className={
+                     'px-9 pt-6 pb-6 rounded text-center lg:text-7xl md:text-6xl sm:text-6xl text-5xl tracking-tight text-white font-semibold'
+                  }>
+                  About us
+               </h1>
+            </div>
 
-         {/*   <div className={'container sm:columns-2 text-pretty gap-x-16 my-16'}>*/}
-         {/*      <p className={'text-sm leading-loose text-white font-extralight text-wrap'}>*/}
-         {/*         Welcome to the world of innovation and software development with 0/1{'\u00A0'}*/}
-         {/*         COMBINE{'\u00A0'}*/}
-         {/*         {'\u2014'} your trusted partner in creating unique solutions! Our story began in*/}
-         {/*         2015 and since then we have developed many exciting applications, software*/}
-         {/*         solutions and websites for organizations of various sizes. Our experience spans*/}
-         {/*         working with large corporations, startups, advertising and media agencies, private*/}
-         {/*         entrepreneurs and others. What makes us special? Our team includes talented*/}
-         {/*         developers, professional product managers, and experienced UI/UX specialists. We*/}
-         {/*         have mastered the most advanced technologies, working with Windows, Linux, IOS,*/}
-         {/*         Android, Ionic, Cordova and many other platforms. Our arsenal includes Back/Front*/}
-         {/*         End, Client/Server Side, cloud technologies, data management, machine learning and*/}
-         {/*         more. What makes us unique? We specialize in creating custom solutions that meet*/}
-         {/*         each client's requirements and needs. We offer a full product development cycle*/}
-         {/*         {'\u00A0'}*/}
-         {/*         {'\u2014'} from ideation to implementation, and can effectively build into any*/}
-         {/*         stage of development. This ability allows 0/1{'\u00A0'}COMBINE to provide*/}
-         {/*         excellent service to every client, of any size and from any business sector, and*/}
-         {/*         to integrate quickly into the activities required. Today, 0/1{'\u00A0'}COMBINE is*/}
-         {/*         a dynamic company with over 8 years of successful operations. We are distinguished*/}
-         {/*         by efficiency and responsiveness to any task. We are ready to provide superior*/}
-         {/*         service to every client, regardless of size or area of business. We have a unique*/}
-         {/*         ability to quickly integrate into any team and solve problems at the highest*/}
-         {/*         level. Join 0/1{'\u00A0'}COMBINE and together we will turn your ideas into*/}
-         {/*         reality! With us you will always be one step ahead of the competition.*/}
-         {/*      </p>*/}
-         {/*   </div>*/}
+            <div className={'container sm:columns-2 text-pretty gap-x-16 my-16'}>
+               <p className={'text-sm leading-loose text-white font-extralight text-wrap'}>
+                  Welcome to the world of innovation and software development with 0/1{'\u00A0'}
+                  COMBINE{'\u00A0'}
+                  {'\u2014'} your trusted partner in creating unique solutions! Our story began in
+                  2015 and since then we have developed many exciting applications, software
+                  solutions and websites for organizations of various sizes. Our experience spans
+                  working with large corporations, startups, advertising and media agencies, private
+                  entrepreneurs and others. What makes us special? Our team includes talented
+                  developers, professional product managers, and experienced UI/UX specialists. We
+                  have mastered the most advanced technologies, working with Windows, Linux, IOS,
+                  Android, Ionic, Cordova and many other platforms. Our arsenal includes Back/Front
+                  End, Client/Server Side, cloud technologies, data management, machine learning and
+                  more. What makes us unique? We specialize in creating custom solutions that meet
+                  each client's requirements and needs. We offer a full product development cycle
+                  {'\u00A0'}
+                  {'\u2014'} from ideation to implementation, and can effectively build into any
+                  stage of development. This ability allows 0/1{'\u00A0'}COMBINE to provide
+                  excellent service to every client, of any size and from any business sector, and
+                  to integrate quickly into the activities required. Today, 0/1{'\u00A0'}COMBINE is
+                  a dynamic company with over 8 years of successful operations. We are distinguished
+                  by efficiency and responsiveness to any task. We are ready to provide superior
+                  service to every client, regardless of size or area of business. We have a unique
+                  ability to quickly integrate into any team and solve problems at the highest
+                  level. Join 0/1{'\u00A0'}COMBINE and together we will turn your ideas into
+                  reality! With us you will always be one step ahead of the competition.
+               </p>
+            </div>
 
-         {/*   /!*SubTitile Section*!/*/}
-         {/*   <div className={'flex justify-center mt-5 mb-10'}>*/}
-         {/*      <h2 className={'w-2/3 justify-center text-lg font-light text-white text-center'}>*/}
-         {/*         Join 0/1 COMBINE and together we will turn your ideas into reality!*/}
-         {/*         <br />*/}
-         {/*         With us you will always be one step ahead of the competition.*/}
-         {/*      </h2>*/}
-         {/*   </div>*/}
-         {/*</section>*/}
+            {/*SubTitile Section*/}
+            <div className={'flex justify-center mt-5 mb-10'}>
+               <h2 className={'w-2/3 justify-center text-lg font-light text-white text-center'}>
+                  Join 0/1 COMBINE and together we will turn your ideas into reality!
+                  <br />
+                  With us you will always be one step ahead of the competition.
+               </h2>
+            </div>
+         </section>
 
          <section className={'max-w-6xl mx-auto px-4 mb-48'}>
             <div className={'mt-32 mb-5'}>
@@ -434,9 +434,9 @@ const Homepage = () => {
                <div className={'grid grid-cols-3 gap-x-0 p-20'}>
                   <div>
                      <Image
-                        className={'m-auto'}
+                        className={'m-auto w-36'}
                         src={'/assets/images/thec_items_08_08.png'}
-                        alt={'0/1 COMBINE — Footer > about us'}
+                        alt={'0/1 COMBINE — Footer | About us'}
                         width={144}
                         height={144}
                      />
@@ -455,7 +455,7 @@ const Homepage = () => {
                         <br />
                         Tel: 052-8287009
                         <br />
-                        Email: contact@01combine.com
+                        Email: kirill.ter@gmail.com
                      </div>
                   </div>
                   <div>
