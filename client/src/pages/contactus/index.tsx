@@ -103,6 +103,23 @@ const Contactus = () => {
                      </div>
                   </div>
 
+                  <div className="sm:col-span-2">
+                     <label
+                        htmlFor="userID"
+                        className="block text-sm font-medium leading-6 text-white">
+                        Customer ID:
+                     </label>
+                     <div className="mt-2">
+                        <input
+                           id="userID"
+                           name="userID"
+                           type="number"
+                           autoComplete="ID"
+                           className="block w-full bg-gray-600 bg-opacity-30 ring-1 ring-white rounded-md border-0 p-2.5 text-white placeholder:text-gray-400 sm:leading-6"
+                        />
+                     </div>
+                  </div>
+
                   <div className="col-span-full">
                      <label
                         htmlFor="message"
