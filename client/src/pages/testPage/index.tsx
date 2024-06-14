@@ -77,7 +77,15 @@ const TestPage = () => {
 
    return (
       <div>
-         <div className={'w-full max-w-7xl'}>
+         <section className={'max-w-6xl mx-auto px-4 mb-48'}>
+            <div className={'mt-32 mb-5'}>
+               <h1
+                  className={
+                     'px-9 pt-6 pb-6 rounded text-center lg:text-7xl md:text-6xl sm:text-6xl text-5xl tracking-tight text-white font-semibold'
+                  }>
+                  Test Page
+               </h1>
+            </div>
             {/* Display users */}
             <div className={'space-y-4'}>
                {users.map((user) => {
@@ -154,7 +162,7 @@ const TestPage = () => {
                   Update User
                </button>
             </form>
-         </div>
+         </section>
       </div>
    );
 };
