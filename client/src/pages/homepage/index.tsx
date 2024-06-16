@@ -2,8 +2,11 @@ import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { HomePage_SectionsContent } from '@/utils/constants';
 import ButtonXL from '../../components/ButtonXL';
+import { useTranslation } from 'next-i18next';
 
 const Homepage = () => {
+   const { t } = useTranslation(['home-page', 'common']);
+
    return (
       <div
          className={
@@ -14,28 +17,31 @@ const Homepage = () => {
                className={
                   'mt-16 mb-12 pt-6 pb-0 px-2 lg:text-8xl md:text-7xl sm:text-7xl text-6xl tracking-tight text-white text-center font-semibold'
                }>
-               We{'\u00A0'}are creating
-               <br />
-               sof{'\u200A'}tware solutions
+               {t('hp_BasicTitle')}
+               {/*We{'\u00A0'}are creating*/}
+               {/*<br />*/}
+               {/*sof{'\u200A'}tware solutions*/}
             </h1>
 
             <div className="w-auto md:w-1/2 content-center m-auto flex">
                <h2 className={'text-white text-center text-lg font-light px-4'}>
-                  Unleash your business potential with our innovative and reliable software
-                  solutions that streamline workflow, boost productivity, and empower your success.
+                  {t('hp_BasicSubTitle')}
                </h2>
             </div>
 
             <div className={'flex columns-2 justify-between'}>
-               <ButtonXL content={'Contact us now'} routeName={'/contactus'} />
+               <ButtonXL
+                  content={t('common:btn_ContactUsNow', { count: 99 })}
+                  routeName={'/contactus'}
+               />
             </div>
          </section>
 
+         {/* Technologies */}
          <section
             className={
                'w-full mt-[150px] sm:mt-[300px] md:mt-[400px] lg:mt-[380px] xl:mt-[550px] max-w-6xl mx-auto px-4'
             }>
-            {/*Technologies*/}
             <h1
                className={
                   'px-9 pt-6 pb-6 text-center lg:text-7xl md:text-6xl sm:text-6xl text-5xl tracking-tight text-white font-semibold'

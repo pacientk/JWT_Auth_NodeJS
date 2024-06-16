@@ -1,28 +1,36 @@
 import React from 'react';
 import Head from 'next/head';
 import Homepage from '@/pages/homepage';
-import type { GetStaticProps, InferGetStaticPropsType } from 'next';
-
-type Repo = {
-   name: string;
-   stargazers_count: number;
-};
 
 /**
  * If you export a function called getStaticProps (Static Site Generation) from a page,
  * Next.js will pre-render this page at build time using the props returned by getStaticProps.
  * See: https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-props
  */
+// type Repo = {
+//    name: string;
+//    stargazers_count: number;
+// };
+// export const getStaticProps = (async (context) => {
+//    const res = await fetch('https://api.github.com/repos/vercel/next.js');
+//    const repo = await res.json();
+//    return { props: { repo } };
+// }) satisfies GetStaticProps<{
+//    repo: Repo;
+// }>;
+// export default function Home({ repo }: InferGetStaticPropsType<typeof getStaticProps>) {
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { NS_LOCALES } from '@/utils/constants';
 
-export const getStaticProps = (async (context) => {
-   const res = await fetch('https://api.github.com/repos/vercel/next.js');
-   const repo = await res.json();
-   return { props: { repo } };
-}) satisfies GetStaticProps<{
-   repo: Repo;
-}>;
+export async function getStaticProps({ locale }: any) {
+   return {
+      props: {
+         ...(await serverSideTranslations(locale, NS_LOCALES)),
+      },
+   };
+}
 
-export default function Home({ repo }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Home() {
    return (
       <main>
          <Head>

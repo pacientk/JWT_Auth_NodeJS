@@ -12,7 +12,7 @@ interface User {
 }
 
 const TestPage = () => {
-   const apiUrl = process.env.API_URL || 'http://localhost:4000/api';
+   const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api';
    const [users, setUsers] = useState<User[]>([]);
    const [newUser, setNewUser] = useState({ name: '', email: '', password: '' });
    const [updateUser, setUpdateUser] = useState({ id: '', name: '', email: '' });

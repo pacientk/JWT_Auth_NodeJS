@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "i18nexus pull && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -13,9 +13,14 @@
     "@heroicons/react": "^2.0.18",
     "@next/eslint-plugin-next": "^14.0.4",
     "axios": "^1.6.2",
+    "i18next": "^23.11.5",
+    "i18next-browser-languagedetector": "^8.0.0",
+    "i18next-http-backend": "^2.5.2",
     "next": "14.0.4",
+    "next-i18next": "^15.3.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-i18next": "^14.1.2",
     "uuid": "^9.0.1"
   },
   "devDependencies": {

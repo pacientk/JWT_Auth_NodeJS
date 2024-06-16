@@ -4,6 +4,7 @@
     --background-end-rgb: 255, 255, 255;
     --background-main-rgb: 37, 55, 70;
     --background-main-dark-rgb: 28, 45, 58;
+    white-space: pre-line;
 }
 
 /*@media (prefers-color-scheme: dark) {*/
