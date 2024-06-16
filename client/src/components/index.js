@@ -4,5 +4,6 @@ import Navbar from './Navbar';
 import AppHeadHtml from './AppHeadHtml';
 import Footer from './Footer';
 import ButtonXL from './ButtonXL';
+import LanguageSwitcher from './LanguageSwitcher';
 
-export { CardComponent, LayoutMain, Navbar, AppHeadHtml, Footer, ButtonXL };
+export { CardComponent, LayoutMain, Navbar, AppHeadHtml, Footer, ButtonXL, LanguageSwitcher };

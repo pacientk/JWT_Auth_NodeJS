@@ -17,12 +17,12 @@ const Homepage = () => {
                className={
                   'mt-16 mb-12 pt-6 pb-0 px-2 lg:text-8xl md:text-7xl sm:text-7xl text-6xl tracking-tight text-white text-center font-semibold'
                }>
-               {t('hp_BasicTitle')}
+               {t('home-page:hp_BasicTitle')}
             </h1>
 
             <div className="w-auto md:w-1/2 content-center m-auto flex">
                <h2 className={'text-white text-center text-lg font-light px-4'}>
-                  {t('hp_BasicSubTitle')}
+                  {t('home-page:hp_BasicSubTitle')}
                </h2>
             </div>
 
@@ -44,7 +44,7 @@ const Homepage = () => {
             </h1>
 
             <h2 className={'text-white text-center text-lg font-light'}>
-               {t('technologies.subTitle')}
+               {t('home-page:technologies.subTitle')}
             </h2>
 
             <div className={'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-16'}>

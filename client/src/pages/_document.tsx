@@ -2,7 +2,7 @@ import { Footer } from '@/components';
 import { Head, Html, Main, NextScript } from 'next/document';
 import React from 'react';
 
-export default function _document() {
+const Document = () => {
    return (
       <Html className={'h-full'} dir={'ltr'} lang="en">
          <Head>
@@ -38,4 +38,6 @@ export default function _document() {
          </body>
       </Html>
    );
-}
+};
+
+export default Document;

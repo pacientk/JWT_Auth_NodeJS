@@ -4,6 +4,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { SvgBrandLogo } from '@/assets/svgSources';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { LanguageSwitcher } from '@/components';
 
 const navigation = [
    { name: 'Home', href: '/' },
@@ -85,6 +86,9 @@ export default function Navbar() {
                            </div>
                         </div>
                      </div>
+                  </div>
+                  <div className="absolute inset-y-0 right-0 flex items-center pr-2 lg:static lg:inset-auto lg:ml-6 sm:pr-0">
+                     <LanguageSwitcher />
                   </div>
                   {/*<div className="absolute inset-y-0 right-0 flex items-center pr-2 lg:static lg:inset-auto lg:ml-6 sm:pr-0">*/}
                   {/*   <button*/}
