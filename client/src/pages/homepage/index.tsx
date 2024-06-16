@@ -1,8 +1,8 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { HomePage_SectionsContent } from '@/utils/constants';
 import ButtonXL from '../../components/ButtonXL';
 import { useTranslation } from 'next-i18next';
+import { HomePage_SectionsContent } from '@/utils/constants';
 
 const Homepage = () => {
    const { t } = useTranslation(['home-page', 'common']);
@@ -18,9 +18,6 @@ const Homepage = () => {
                   'mt-16 mb-12 pt-6 pb-0 px-2 lg:text-8xl md:text-7xl sm:text-7xl text-6xl tracking-tight text-white text-center font-semibold'
                }>
                {t('hp_BasicTitle')}
-               {/*We{'\u00A0'}are creating*/}
-               {/*<br />*/}
-               {/*sof{'\u200A'}tware solutions*/}
             </h1>
 
             <div className="w-auto md:w-1/2 content-center m-auto flex">
@@ -30,10 +27,7 @@ const Homepage = () => {
             </div>
 
             <div className={'flex columns-2 justify-between'}>
-               <ButtonXL
-                  content={t('common:btn_ContactUsNow', { count: 99 })}
-                  routeName={'/contactus'}
-               />
+               <ButtonXL content={t('common:btn_ContactUsNow')} routeName={'/contactus'} />
             </div>
          </section>
 
@@ -46,11 +40,11 @@ const Homepage = () => {
                className={
                   'px-9 pt-6 pb-6 text-center lg:text-7xl md:text-6xl sm:text-6xl text-5xl tracking-tight text-white font-semibold'
                }>
-               {HomePage_SectionsContent.technologies.title}
+               {t('technologies.title')}
             </h1>
 
             <h2 className={'text-white text-center text-lg font-light'}>
-               {HomePage_SectionsContent.technologies.subTitle}
+               {t('technologies.subTitle')}
             </h2>
 
             <div className={'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-16'}>

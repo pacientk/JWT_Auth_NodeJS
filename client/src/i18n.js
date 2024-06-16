@@ -10,8 +10,6 @@ i18n
    .use(LanguageDetector)
    .use(initReactI18next)
    .init({
-      lng: 'ru',
-
       backend: {
          loadPath: `https://api.i18nexus.com/project_resources/translations/{{lng}}/{{ns}}.json?api_key=${process.env.NEXT_PUBLIC_I18NEXUS_API_KEY}`,
       },
