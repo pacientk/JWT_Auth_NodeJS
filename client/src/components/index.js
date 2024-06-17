@@ -1,6 +1,9 @@
-import LoginForm from './LoginForm';
-import NavBar from './NavBar';
-import Loading from './Loading';
-import LoadingSpinner from './LoadingSpinner';
+import CardComponent from './CardComponent';
+import LayoutMain from './LayoutMain';
+import Navbar from './Navbar';
+import AppHeadHtml from './AppHeadHtml';
+import Footer from './Footer';
+import ButtonXL from './ButtonXL';
+import LanguageSwitcher from './LanguageSwitcher';
 
-export { LoginForm, NavBar, Loading, LoadingSpinner };
+export { CardComponent, LayoutMain, Navbar, AppHeadHtml, Footer, ButtonXL, LanguageSwitcher };

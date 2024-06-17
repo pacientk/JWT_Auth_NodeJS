@@ -90,6 +90,16 @@ class UserService {
       const users = await UserModel.find();
       return users;
    }
+
+   async deleteUserById(id) {
+      const users = await UserModel.findByIdAndDelete(id);
+      return;
+   }
+
+   async addNewUser(newUser) {
+      const users = await UserModel.create(newUser);
+      return users;
+   }
 }
 
 module.exports = new UserService();
