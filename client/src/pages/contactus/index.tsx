@@ -1,6 +1,16 @@
 import React from 'react';
 import { ButtonXL } from '@/components';
 import { useTranslation } from 'next-i18next';
+import { GetStaticProps } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+   return {
+      props: {
+         ...(await serverSideTranslations(locale || 'en', ['contactus'])),
+      },
+   };
+};
 
 const Contactus = () => {
    const { t } = useTranslation('contactus');

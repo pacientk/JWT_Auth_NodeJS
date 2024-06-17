@@ -2,7 +2,17 @@ import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import ButtonXL from '../../components/ButtonXL';
 import { useTranslation } from 'next-i18next';
-import { HomePage_SectionsContent } from '@/utils/constants';
+import { HomePage_SectionsContent, LOCALES_NS } from '@/utils/constants';
+import { GetStaticProps } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+   return {
+      props: {
+         ...(await serverSideTranslations(locale || 'en', LOCALES_NS)),
+      },
+   };
+};
 
 const Homepage = () => {
    const { t } = useTranslation(['home-page', 'common']);

@@ -4,7 +4,7 @@ export const backgrString =
 export const LOCALES_LIST = ['en', 'he', 'ru'] as const;
 export type Locale = (typeof LOCALES_LIST)[number];
 
-export const LOCALES_NS = ['common', 'home-page', 'aboutus', 'nav-bar', 'contactus'] as const;
+export const LOCALES_NS = ['common', 'home-page', 'aboutus', 'nav-bar', 'contactus'];
 export type LocaleNS = (typeof LOCALES_NS)[number];
 
 export const HomePage_SectionsContent = {

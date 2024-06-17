@@ -11,11 +11,14 @@ const LanguageSwitcher = () => {
    const [dropdownIsActive, setDropdownIsActive] = React.useState(false);
    const [currentLang, setCurrentLang] = React.useState(i18n.language);
    const [langName, setLangName] = useState<string>(i18n.language);
+   // const savedLanguage = typeof window !== 'undefined' ? localStorage.getItem('language') : 'en';
 
    const changeLocale = (lang: Locale) => {
       if (i18n.language !== lang) {
          i18n.changeLanguage(lang);
          setCurrentLang(lang);
+         localStorage.setItem('language', lang); // Сохраняем выбранный язык в localStorage
+
          setDropdownIsActive(false);
          router.push(router.pathname, router.asPath, { locale: lang });
       }

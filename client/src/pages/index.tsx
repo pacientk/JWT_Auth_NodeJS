@@ -25,13 +25,7 @@ import { GetStaticProps } from 'next';
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
    return {
       props: {
-         ...(await serverSideTranslations(locale || 'en', [
-            'common',
-            'home-page',
-            'aboutus',
-            'nav-bar',
-            'contactus',
-         ])),
+         ...(await serverSideTranslations(locale || 'en', ['common', 'home-page'])),
       },
    };
 };

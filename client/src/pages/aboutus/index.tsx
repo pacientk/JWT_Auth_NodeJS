@@ -1,5 +1,15 @@
 import React from 'react';
 import { useTranslation } from 'next-i18next';
+import { GetStaticProps } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+   return {
+      props: {
+         ...(await serverSideTranslations(locale || 'en', ['common', 'contact', 'aboutus'])),
+      },
+   };
+};
 
 const AboutUs = () => {
    const { t, i18n } = useTranslation('aboutus');
