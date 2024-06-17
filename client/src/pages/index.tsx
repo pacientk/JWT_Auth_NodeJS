@@ -20,17 +20,23 @@ import Homepage from '@/pages/homepage';
 // }>;
 // export default function Home({ repo }: InferGetStaticPropsType<typeof getStaticProps>) {
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { NS_LOCALES } from '@/utils/constants';
+import { GetStaticProps } from 'next';
 
-export async function getStaticProps({ locale }: any) {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
    return {
       props: {
-         ...(await serverSideTranslations(locale, NS_LOCALES)),
+         ...(await serverSideTranslations(locale || 'en', [
+            'common',
+            'home-page',
+            'aboutus',
+            'nav-bar',
+            'contactus',
+         ])),
       },
    };
-}
+};
 
-export default function Home() {
+const Home = () => {
    return (
       <main>
          <Head>
@@ -39,4 +45,6 @@ export default function Home() {
          <Homepage />
       </main>
    );
-}
+};
+
+export default Home;

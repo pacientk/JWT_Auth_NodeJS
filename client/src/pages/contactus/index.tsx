@@ -1,7 +1,9 @@
 import React from 'react';
 import { ButtonXL } from '@/components';
+import { useTranslation } from 'next-i18next';
 
 const Contactus = () => {
+   const { t } = useTranslation('contactus');
    return (
       <section className={'max-w-6xl mx-auto px-4 mb-48'}>
          <div className={'mt-32 mb-5'}>
@@ -9,7 +11,7 @@ const Contactus = () => {
                className={
                   'px-9 pt-6 pb-6 rounded text-center lg:text-7xl md:text-6xl sm:text-6xl text-5xl tracking-tight text-white font-semibold'
                }>
-               Contact us
+               {t('contactUs')}
             </h1>
          </div>
 

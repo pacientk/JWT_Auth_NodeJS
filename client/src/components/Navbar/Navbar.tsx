@@ -46,7 +46,7 @@ export default function Navbar() {
          className={'sticky top-0 z-50 scroll-m-2d transition-colors duration-300 bg-transparent'}>
          {({ open }) => (
             <>
-               <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+               <div className="mx-auto px-2 sm:px-6 lg:px-8">
                   <div className={`relative flex h-16 items-center justify-between`}>
                      <div className="absolute inset-y-0 left-0 flex items-center lg:hidden">
                         {/* Mobile menu button*/}
@@ -69,15 +69,15 @@ export default function Navbar() {
                            </div>
                         </div>
                         <div className="hidden lg:block">
-                           <div className="flex space-x-6 pt-1 pb-1 mt-1">
+                           <div className="flex space-x-6 py-1 mt-1">
                               {navigation.map((item) => (
                                  <Link
                                     key={item.name}
                                     href={item.href}
                                     className={
                                        pathname == item.href
-                                          ? 'bg-white text-black font-normal leading-5 rounded-full px-3 pt-1.5 pb-1.5 text-sm'
-                                          : 'text-white hover:bg-white hover:text-black font-light leading-5 rounded-full px-3 pt-1.5 pb-1.5 text-sm'
+                                          ? 'bg-white text-black font-normal leading-5 rounded-full px-3 py-1.5 text-sm'
+                                          : 'text-white hover:bg-white hover:text-black font-light leading-5 rounded-full px-3 py-1.5 text-sm'
                                     }
                                     aria-current={pathname == item.href ? 'page' : undefined}>
                                     {item.name}

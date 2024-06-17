@@ -4,7 +4,7 @@ import { LayoutMain } from '@/components/';
 import AppHeadHtml from '@/components/AppHeadHtml';
 import { appWithTranslation } from 'next-i18next';
 import './globals.css';
-import '../i18n';
+import '../locales/i18n';
 
 function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
    return (
