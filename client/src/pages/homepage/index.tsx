@@ -31,7 +31,7 @@ const Homepage = () => {
             </h1>
 
             <div className="w-auto md:w-1/2 content-center m-auto flex">
-               <h2 className={'text-white text-center text-lg font-light px-4'}>
+               <h2 className={'text-white text-center text-lg font-normal px-4'}>
                   {t('home-page:hp_BasicSubTitle')}
                </h2>
             </div>
@@ -53,7 +53,7 @@ const Homepage = () => {
                {t('technologies.title')}
             </h1>
 
-            <h2 className={'text-white text-center text-lg font-light'}>
+            <h2 className={'text-white text-center text-lg font-normal'}>
                {t('home-page:technologies.subTitle')}
             </h2>
 
@@ -77,17 +77,17 @@ const Homepage = () => {
                            {name}
                         </div>
                      ))}
-                     <div className={'text-white font-light text-xl inline-block px-1'}>
+                     <div className={'text-white font-normal text-xl inline-block px-1'}>
                         {item.extText}
                      </div>
-                     <h4 className={'text-lg text-white font-light mt-2'}>{item.text}</h4>
+                     <h4 className={'text-lg text-white font-normal mt-2'}>{item.text}</h4>
                   </div>
                ))}
             </div>
 
             {/*SubTitile Section*/}
             <div className={'flex justify-center mt-16'}>
-               <h2 className={'w-2/3 justify-center text-lg font-light text-white text-center'}>
+               <h2 className={'w-2/3 justify-center text-lg font-normal text-white text-center'}>
                   Unleash your business potential with our innovative and reliable software
                   solutions that streamline workflow, boost productivity, and empower your success.
                </h2>

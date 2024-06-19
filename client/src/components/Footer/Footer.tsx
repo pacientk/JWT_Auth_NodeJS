@@ -42,7 +42,7 @@ const Footer = () => {
                   </div>
                </div>
                <div className={'mb-6'}>
-                  <div className={'text-white font-light text-sm'}>
+                  <div className={'text-white font-normal text-sm'}>
                      At our company, we specialize in creating cutting-edge mobile and web
                      applications tailored to your unique business needs. Our expert development
                      team is dedicated to transforming your ideas into reality, ensuring

@@ -8,7 +8,7 @@ import { LanguageSwitcher } from '@/components';
 import { useTranslation } from 'next-i18next';
 
 const navigation = [
-   { name: 'home', href: '/' },
+   // { name: 'home', href: '/' },
    { name: `aboutUs`, href: '/aboutus' },
    { name: `contactUs`, href: '/contactus' },
 ];
@@ -67,29 +67,29 @@ export default function Navbar() {
                         <div className="flex flex-shrink-0 items-center">
                            <div className={'h-5 w-auto'}>
                               <Link href={'/'}>
-                                 <SvgBrandLogo className={'h-6 fill-white lg:me-16'} />
+                                 <SvgBrandLogo className={'h-8 fill-white lg:me-16'} />
                               </Link>
                            </div>
                         </div>
                         <div className="hidden lg:block">
-                           <div className="flex space-x-6 py-1 mt-1">
+                           <div className="flex py-1 mt-1">
                               {navigation.map((item) => (
                                  <Link
                                     key={item.name}
                                     href={item.href}
                                     className={
                                        pathname == item.href
-                                          ? 'bg-white text-black font-normal leading-5 rounded-full px-3 py-1.5 text-sm'
-                                          : 'text-white hover:bg-white hover:text-black font-light leading-5 rounded-full px-3 py-1.5 text-sm'
+                                          ? 'text-black bg-white font-normal leading-5 rounded-full px-3 py-1.5 text-lg me-6'
+                                          : 'text-white font-normal hover:bg-white hover:text-black leading-5 rounded-full px-3 py-1.5 text-lg me-6'
                                     }
                                     aria-current={pathname == item.href ? 'page' : undefined}>
-                                    {t(`common:${item.name}`)}
+                                    {t(item.name)}
                                  </Link>
                               ))}
                            </div>
                         </div>
                      </div>
-                     <div className="absolute inset-y-0 right-0 flex items-center pr-2 lg:static lg:inset-auto lg:ml-6 sm:pr-0">
+                     <div className="absolute flex inset-y-0 right-0 items-center pr-2 lg:static lg:inset-auto sm:pr-0">
                         <LanguageSwitcher />
                      </div>
                   </div>
@@ -110,7 +110,7 @@ export default function Navbar() {
                                     : 'text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium'
                               }
                               aria-current={pathname == item.href ? 'page' : undefined}>
-                              {t(`item.name`)}
+                              {t(item.name)}
                            </Link>
                         );
                      })}

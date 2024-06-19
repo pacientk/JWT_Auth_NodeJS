@@ -57,7 +57,7 @@ const AboutUs = () => {
 
          {/*SubTitile Section*/}
          <div className={'flex justify-center mt-5 mb-10'}>
-            <h2 className={'w-2/3 justify-center text-lg font-light text-white text-center'}>
+            <h2 className={'w-2/3 justify-center text-lg font-normal text-white text-center'}>
                {t('aboutus.subtitle')}
             </h2>
          </div>

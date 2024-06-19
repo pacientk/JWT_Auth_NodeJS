@@ -31,7 +31,7 @@ const LanguageSwitcher = () => {
             onClick={() => setDropdownIsActive((prevState) => !prevState)}
             type="button"
             className={
-               'flex w-auto gap-x-2 px-2 py-1.5 font-light leading-5 rounded-full text-sm text-gray-100 hover:bg-white hover:text-black'
+               'flex w-auto gap-x-2 px-2 py-1.5 font-normal leading-5 rounded-full text-sm text-gray-100 hover:bg-white hover:text-black'
             }
             id="menu-button"
             aria-expanded="false"
