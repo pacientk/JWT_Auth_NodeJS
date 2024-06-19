@@ -6,15 +6,13 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
    return {
       props: {
-         ...(await serverSideTranslations(locale || 'en', ['common', 'contact', 'aboutus'])),
+         ...(await serverSideTranslations(locale || 'en', ['common', 'aboutus'])),
       },
    };
 };
 
 const AboutUs = () => {
-   const { t, i18n } = useTranslation('aboutus');
-
-   // i18n.changeLanguage('en')
+   const { t } = useTranslation('aboutus');
 
    return (
       <section className={'max-w-6xl mx-auto px-4 mb-48'}>
@@ -28,7 +26,7 @@ const AboutUs = () => {
          </div>
 
          <div className={'container sm:columns-2 text-pretty gap-x-16 my-16'}>
-            <p className={'text-sm leading-loose text-white font-extralight text-wrap'}>
+            <p className={'leading-loose text-white font-normal text-wrap '}>
                {t('aboutus.content')}
                {/*Welcome to the world of innovation and software development with 0/1{'\u00A0'}*/}
                {/*COMBINE{'\u00A0'}*/}

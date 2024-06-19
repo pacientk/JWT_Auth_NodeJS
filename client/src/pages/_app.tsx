@@ -1,6 +1,6 @@
 import React from 'react';
 import type { AppProps } from 'next/app';
-import { LayoutMain } from '@/components/';
+import { LayoutMain, Navbar } from '@/components/';
 import AppHeadHtml from '@/components/AppHeadHtml';
 import { appWithTranslation } from 'next-i18next';
 import './globals.css';
@@ -11,7 +11,10 @@ function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
       <>
          <AppHeadHtml />
          <LayoutMain>
-            <Component {...pageProps} />
+            <>
+               <Navbar />
+               <Component {...pageProps} />
+            </>
          </LayoutMain>
       </>
    );
