@@ -11,6 +11,11 @@ const LanguageSwitcher = () => {
    const [dropdownIsActive, setDropdownIsActive] = React.useState(false);
    const [displayLangName, setDisplayLangName] = useState<string>(i18n.language);
 
+   useEffect(() => {
+      setDisplayLangName(localesNames[i18n.language]?.nativeName);
+      i18n.changeLanguage(i18n.language);
+   }, [i18n.language]);
+
    const changeLocale = (lang: Locale) => {
       if (i18n.language !== lang) {
          i18n.changeLanguage(lang);
@@ -19,11 +24,6 @@ const LanguageSwitcher = () => {
          router.push(router.pathname, router.asPath, { locale: lang });
       }
    };
-
-   useEffect(() => {
-      setDisplayLangName(localesNames[i18n.language]?.nativeName);
-      i18n.changeLanguage(i18n.language);
-   }, [i18n.language]);
 
    return (
       <div className="relative mt-1">
@@ -61,7 +61,7 @@ const LanguageSwitcher = () => {
                dropdownIsActive
                   ? 'transition ease-in duration-75 transform opacity-100 scale-100 block'
                   : 'transition ease-out duration-100 transform opacity-50 scale-95 hidden'
-            } right-0 z-10 mt-2 min-w-32 origin-top-right rounded-md bg-white`}
+            } rtl:left-0 ltr:right-0 z-10 mt-2 min-w-32 origin-top-right rounded-md bg-white`}
             role="menu"
             aria-orientation="vertical"
             aria-labelledby="menu-button"

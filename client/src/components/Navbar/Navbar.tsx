@@ -65,9 +65,9 @@ export default function Navbar() {
                      {/*DESKTOP*/}
                      <div className="flex flex-1 items-center justify-center sm:items-stretch lg:justify-start">
                         <div className="flex flex-shrink-0 items-center">
-                           <div className={'h-5 w-auto'}>
+                           <div className={'w-auto'}>
                               <Link href={'/'}>
-                                 <SvgBrandLogo className={'h-8 fill-white lg:me-16'} />
+                                 <SvgBrandLogo className={'h-7 fill-white lg:me-16'} />
                               </Link>
                            </div>
                         </div>
@@ -77,11 +77,11 @@ export default function Navbar() {
                                  <Link
                                     key={item.name}
                                     href={item.href}
-                                    className={
+                                    className={`font-normal leading-5 rounded-full px-3 py-1.5 text-lg me-6 ${
                                        pathname == item.href
-                                          ? 'text-black bg-white font-normal leading-5 rounded-full px-3 py-1.5 text-lg me-6'
-                                          : 'text-white font-normal hover:bg-white hover:text-black leading-5 rounded-full px-3 py-1.5 text-lg me-6'
-                                    }
+                                          ? 'text-black bg-white'
+                                          : 'text-white hover:bg-white hover:text-black leading-5 rounded-full px-3 py-1.5 text-lg me-6'
+                                    }`}
                                     aria-current={pathname == item.href ? 'page' : undefined}>
                                     {t(item.name)}
                                  </Link>
