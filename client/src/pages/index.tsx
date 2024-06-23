@@ -21,11 +21,12 @@ import Homepage from '@/pages/homepage';
 // export default function Home({ repo }: InferGetStaticPropsType<typeof getStaticProps>) {
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetStaticProps } from 'next';
+import { LOCALES_NS } from '@/utils/constants';
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
    return {
       props: {
-         ...(await serverSideTranslations(locale || 'en', ['common', 'home-page'])),
+         ...(await serverSideTranslations(locale || 'en', LOCALES_NS)),
       },
    };
 };
