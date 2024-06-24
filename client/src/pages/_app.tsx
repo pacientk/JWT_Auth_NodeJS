@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import type { AppProps } from 'next/app';
-import { LayoutMain, Navbar } from '@/components/';
+import { Footer, LayoutMain, Navbar } from '@/components/';
 import AppHeadHtml from '@/components/AppHeadHtml';
 import { appWithTranslation } from 'next-i18next';
 import './globals.css';
@@ -21,8 +21,15 @@ function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
          <AppHeadHtml />
          <LayoutMain>
             <>
+               {/*<div*/}
+               {/*   className={*/}
+               {/*      'absolute opacity-40 top-0 left-0 bottom-0 font-openSans slashed-zero text-gray-800 z-0 text-xs text-pretty text-center'*/}
+               {/*   }>*/}
+               {/*   {backgrString}*/}
+               {/*</div>*/}
                <Navbar />
                <Component {...pageProps} />
+               <Footer />
             </>
          </LayoutMain>
       </>

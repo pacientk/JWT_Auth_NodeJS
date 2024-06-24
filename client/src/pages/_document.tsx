@@ -6,9 +6,9 @@ import Document, {
    Main,
    NextScript,
 } from 'next/document';
-import { Footer } from '@/components';
 import React from 'react';
 import i18n from '@/locales/i18n';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 class MyDocument extends Document {
    static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
@@ -50,16 +50,10 @@ class MyDocument extends Document {
             </Head>
 
             <body className={'h-full bg-bgColored bg-cover bg-black'}>
-               {/*<div*/}
-               {/*   className={*/}
-               {/*      'absolute opacity-40 top-0 left-0 bottom-0 font-openSans slashed-zero text-gray-800 z-0 text-xs text-pretty text-center'*/}
-               {/*   }>*/}
-               {/*   {backgrString}*/}
-               {/*</div>*/}
                <Main />
                <NextScript />
-               <Footer />
             </body>
+            <GoogleAnalytics gaId={'G-YBGBF05RJQ'} />
          </Html>
       );
    }
