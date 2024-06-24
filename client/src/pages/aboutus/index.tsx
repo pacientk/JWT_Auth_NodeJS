@@ -4,16 +4,8 @@ import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { PageHead } from '@/components';
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-   return {
-      props: {
-         ...(await serverSideTranslations(locale || 'en', ['common', 'aboutus'])),
-      },
-   };
-};
-
 const AboutUs = () => {
-   const { t } = useTranslation('aboutus');
+   const { t } = useTranslation(['aboutus', 'common']);
 
    return (
       <>
@@ -68,6 +60,14 @@ const AboutUs = () => {
          </section>
       </>
    );
+};
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+   return {
+      props: {
+         ...(await serverSideTranslations(locale || 'en', ['common', 'aboutus'])),
+      },
+   };
 };
 
 export default AboutUs;

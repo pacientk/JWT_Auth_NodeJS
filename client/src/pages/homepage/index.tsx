@@ -20,17 +20,17 @@ const Homepage = () => {
                   className={
                      'mt-16 mb-12 pt-6 pb-0 px-2 lg:text-8xl md:text-7xl sm:text-7xl text-6xl tracking-tight text-white text-center font-semibold'
                   }>
-                  {t('home-page:hp_BasicTitle')}
+                  {t('hp_BasicTitle', { ns: 'homePage' })}
                </h1>
 
                <div className="w-auto md:w-1/2 content-center m-auto flex">
                   <h2 className={'text-white text-center text-lg font-normal px-4'}>
-                     {t('home-page:hp_BasicSubTitle')}
+                     {t('hp_BasicSubTitle', { ns: 'homePage' })}
                   </h2>
                </div>
 
                <div className={'flex columns-2 justify-between'}>
-                  <ButtonXL content={t('common:btn_ContactUsNow')} routeName={'/contactus'} />
+                  <ButtonXL content={t('btn_ContactUsNow')} routeName={'/contactus'} />
                </div>
             </section>
 
@@ -43,11 +43,11 @@ const Homepage = () => {
                   className={
                      'px-9 pt-6 pb-6 text-center lg:text-7xl md:text-6xl sm:text-6xl text-5xl tracking-tight text-white font-semibold'
                   }>
-                  {t('technologies.title')}
+                  {t('technologies.title', { ns: 'homePage' })}
                </h1>
 
                <h2 className={'text-white text-center text-lg font-normal'}>
-                  {t('home-page:technologies.subTitle')}
+                  {t('technologies.subTitle', { ns: 'homePage' })}
                </h2>
 
                <div className={'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-16'}>

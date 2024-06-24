@@ -3,16 +3,16 @@ import Homepage from '@/pages/homepage';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetStaticProps } from 'next';
 
+const Home = () => {
+   return <Homepage />;
+};
+
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
    return {
       props: {
-         ...(await serverSideTranslations(locale || 'en', ['common', 'home-page'])),
+         ...(await serverSideTranslations(locale || 'en', ['common', 'homePage'])),
       },
    };
-};
-
-const Home = () => {
-   return <Homepage />;
 };
 
 export default Home;
