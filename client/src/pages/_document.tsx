@@ -8,7 +8,6 @@ import Document, {
 } from 'next/document';
 import React from 'react';
 import i18n from '@/locales/i18n';
-import { GoogleAnalytics } from '@next/third-parties/google';
 
 class MyDocument extends Document {
    static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
@@ -48,12 +47,10 @@ class MyDocument extends Document {
                   rel="stylesheet"
                />
             </Head>
-
             <body className={'h-full bg-bgColored bg-cover bg-black'}>
                <Main />
                <NextScript />
             </body>
-            <GoogleAnalytics gaId={'G-YBGBF05RJQ'} />
          </Html>
       );
    }

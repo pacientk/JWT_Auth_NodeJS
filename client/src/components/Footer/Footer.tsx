@@ -30,8 +30,8 @@ const Footer = () => {
                      <br />
                      Tel Aviv, 67137
                      <br />
-                     <br />
-                     Tel: 052-8287009
+                     {/*<br />*/}
+                     {/*Tel: 052-8287009*/}
                      <br />
                      Email:{'\u00A0'}
                      <a

@@ -6,10 +6,12 @@ const nextConfig = {
    i18n,
 };
 
-// *** For creating a static build, you can use the following configuration: ***
-// Then in terminal:
-// $ yarn build
-// $ yarn serve -s out
+/**
+ * For creating a static build, you can use the following configuration: ***
+ * Then in terminal:
+ * $ yarn build
+ * $ yarn serve -s out
+ */
 
 // const nextConfig = {
 //    output: 'export', // in case you need to generate static html use 'export' otherwise 'standalone'

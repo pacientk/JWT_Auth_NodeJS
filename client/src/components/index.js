@@ -6,6 +6,7 @@ import Footer from './Footer';
 import ButtonXL from './ButtonXL';
 import LanguageSwitcher from './LanguageSwitcher';
 import PageHead from './PageHead';
+import GoogleAnalytics from './GoogleAnalytics';
 
 export {
    CardComponent,
@@ -16,4 +17,5 @@ export {
    ButtonXL,
    LanguageSwitcher,
    PageHead,
+   GoogleAnalytics,
 };

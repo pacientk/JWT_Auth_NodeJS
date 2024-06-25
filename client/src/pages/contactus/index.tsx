@@ -142,11 +142,6 @@ const Contactus = () => {
                   </div>
 
                   <div className="col-span-full justify-end flex">
-                     {/*<ButtonXL*/}
-                     {/*   content={'Send'}*/}
-                     {/*   routeName={'/contactus'}*/}
-                     {/*   containerStyle={'m-0 my-4'}*/}
-                     {/*/>*/}
                      <div className={'flex columns-2 justify-between'}>
                         <ButtonXL
                            containerStyle={'my-4'}
@@ -174,8 +169,8 @@ const Contactus = () => {
                   <br />
                   Tel Aviv, 67137
                   <br />
-                  <br />
-                  Tel: 052-8287009
+                  {/*<br />*/}
+                  {/*Tel: 052-8287009*/}
                   <br />
                   Email:{' '}
                   <a
