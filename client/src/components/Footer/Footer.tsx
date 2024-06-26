@@ -30,8 +30,8 @@ const Footer = () => {
                      <br />
                      Tel Aviv, 67137
                      <br />
-                     <br />
-                     Tel: 052-8287009
+                     {/*<br />*/}
+                     {/*Tel: 052-8287009*/}
                      <br />
                      Email:{'\u00A0'}
                      <a
@@ -42,7 +42,7 @@ const Footer = () => {
                   </div>
                </div>
                <div className={'mb-6'}>
-                  <div className={'text-white font-light text-sm'}>
+                  <div className={'text-white font-normal text-sm'}>
                      At our company, we specialize in creating cutting-edge mobile and web
                      applications tailored to your unique business needs. Our expert development
                      team is dedicated to transforming your ideas into reality, ensuring

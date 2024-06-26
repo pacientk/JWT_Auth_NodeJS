@@ -13,7 +13,7 @@ i18n
    .use(initReactI18next)
    .init({
       backend: {
-         loadPath: `https://api.i18nexus.com/project_resources/translations/{{lng}}/{{ns}}.json?api_key=${process.env.NEXT_PUBLIC_I18NEXUS_API_KEY}`,
+         loadPath: `https://api.i18nexus.com/project_resources/translations/{{lng}}/{{ns}}.json?api_key=${process.env.I18NEXUS_API_KEY}`,
       },
       lng: savedLanguage || 'en', // Загружаем язык из localStorage или используем 'en' по умолчанию
       fallbackLng: 'en',

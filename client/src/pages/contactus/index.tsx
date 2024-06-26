@@ -4,16 +4,8 @@ import { useTranslation } from 'next-i18next';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-   return {
-      props: {
-         ...(await serverSideTranslations(locale || 'en', ['contactus'])),
-      },
-   };
-};
-
 const Contactus = () => {
-   const { t } = useTranslation('contactus');
+   const { t } = useTranslation();
    return (
       <section className={'max-w-6xl mx-auto px-4 mb-48'}>
          <div className={'mt-32 mb-5'}>
@@ -21,7 +13,7 @@ const Contactus = () => {
                className={
                   'px-9 pt-6 pb-6 rounded text-center lg:text-7xl md:text-6xl sm:text-6xl text-5xl tracking-tight text-white font-semibold'
                }>
-               {t('contactUs')}
+               {t('contactUs', { ns: 'contactus' })}
             </h1>
          </div>
 
@@ -150,11 +142,13 @@ const Contactus = () => {
                   </div>
 
                   <div className="col-span-full justify-end flex">
-                     <ButtonXL
-                        content={'Send'}
-                        routeName={'/contactus'}
-                        containerStyle={'m-0 my-4'}
-                     />
+                     <div className={'flex columns-2 justify-between'}>
+                        <ButtonXL
+                           containerStyle={'my-4'}
+                           content={t('btn_ContactUsNow')}
+                           routeName={'/contactus'}
+                        />
+                     </div>
                   </div>
                </div>
             </div>
@@ -175,8 +169,8 @@ const Contactus = () => {
                   <br />
                   Tel Aviv, 67137
                   <br />
-                  <br />
-                  Tel: 052-8287009
+                  {/*<br />*/}
+                  {/*Tel: 052-8287009*/}
                   <br />
                   Email:{' '}
                   <a
@@ -189,6 +183,14 @@ const Contactus = () => {
          </div>
       </section>
    );
+};
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+   return {
+      props: {
+         ...(await serverSideTranslations(locale || 'en', ['common', 'contactus'])),
+      },
+   };
 };
 
 export default Contactus;

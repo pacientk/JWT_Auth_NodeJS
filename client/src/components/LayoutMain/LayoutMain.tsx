@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar } from '@/components';
+import { GoogleAnalytics } from '@/components';
 
 interface IProps {
    children: JSX.Element;
@@ -8,7 +8,7 @@ interface IProps {
 const LayoutMain: React.FC<IProps> = ({ children }) => {
    return (
       <>
-         <Navbar />
+         <GoogleAnalytics />
          <main className={'relative'}>{children}</main>
       </>
    );

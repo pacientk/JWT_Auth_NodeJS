@@ -4,8 +4,14 @@ export const backgrString =
 export const LOCALES_LIST = ['en', 'he', 'ru'] as const;
 export type Locale = (typeof LOCALES_LIST)[number];
 
-export const LOCALES_NS = ['common', 'home-page', 'aboutus', 'nav-bar', 'contactus'];
-export type LocaleNS = (typeof LOCALES_NS)[number];
+type LocaleNamespace = 'common' | 'homePage' | 'aboutus' | 'navBar' | 'contactus';
+export const LOCALES_NS: LocaleNamespace[] = [
+   'common',
+   'homePage',
+   'aboutus',
+   'navBar',
+   'contactus',
+];
 
 export const HomePage_SectionsContent = {
    technologies: {

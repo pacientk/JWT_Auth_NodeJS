@@ -5,5 +5,17 @@ import AppHeadHtml from './AppHeadHtml';
 import Footer from './Footer';
 import ButtonXL from './ButtonXL';
 import LanguageSwitcher from './LanguageSwitcher';
+import PageHead from './PageHead';
+import GoogleAnalytics from './GoogleAnalytics';
 
-export { CardComponent, LayoutMain, Navbar, AppHeadHtml, Footer, ButtonXL, LanguageSwitcher };
+export {
+   CardComponent,
+   LayoutMain,
+   Navbar,
+   AppHeadHtml,
+   Footer,
+   ButtonXL,
+   LanguageSwitcher,
+   PageHead,
+   GoogleAnalytics,
+};
