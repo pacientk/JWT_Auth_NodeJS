@@ -24,30 +24,19 @@ const AboutUs = () => {
             <div className={'container sm:columns-2 text-pretty gap-x-16 my-16'}>
                <p className={'leading-loose text-white font-normal text-wrap '}>
                   {t('aboutus.content')}
-                  {/*Welcome to the world of innovation and software development with 0/1{'\u00A0'}*/}
-                  {/*COMBINE{'\u00A0'}*/}
-                  {/*{'\u2014'} your trusted partner in creating unique solutions! Our story began in 2015*/}
-                  {/*and since then we have developed many exciting applications, software solutions and*/}
-                  {/*websites for organizations of various sizes. Our experience spans working with large*/}
-                  {/*corporations, startups, advertising and media agencies, private entrepreneurs and*/}
-                  {/*others. What makes us special? Our team includes talented developers, professional*/}
-                  {/*product managers, and experienced UI/UX specialists. We have mastered the most*/}
-                  {/*advanced technologies, working with Windows, Linux, IOS, Android, Ionic, Cordova and*/}
-                  {/*many other platforms. Our arsenal includes Back/Front End, Client/Server Side, cloud*/}
-                  {/*technologies, data management, machine learning and more. What makes us unique? We*/}
-                  {/*specialize in creating custom solutions that meet each client's requirements and*/}
-                  {/*needs. We offer a full product development cycle*/}
-                  {/*{'\u00A0'}*/}
-                  {/*{'\u2014'} from ideation to implementation, and can effectively build into any stage*/}
-                  {/*of development. This ability allows 0/1{'\u00A0'}COMBINE to provide excellent service*/}
-                  {/*to every client, of any size and from any business sector, and to integrate quickly*/}
-                  {/*into the activities required. Today, 0/1{'\u00A0'}COMBINE is a dynamic company with*/}
-                  {/*over 8 years of successful operations. We are distinguished by efficiency and*/}
-                  {/*responsiveness to any task. We are ready to provide superior service to every client,*/}
-                  {/*regardless of size or area of business. We have a unique ability to quickly integrate*/}
-                  {/*into any team and solve problems at the highest level. Join 0/1{'\u00A0'}COMBINE and*/}
-                  {/*together we will turn your ideas into reality! With us you will always be one step*/}
-                  {/*ahead of the competition.*/}
+                  {/*Welcome to the innovation and software development world with 0/1 Combine - your reliable partner in creating unique solutions! Our story began in 2015 and since then we have developed many interesting apps and websites for organizations of different sizes, and many uniq software solutions. Our experience includes working with startups, advertising and media agencies, private entrepreneurs, and others.*/}
+
+                  {/*What makes us special?*/}
+                  {/*Our team includes talented developers, professional product managers, and experienced UI/UX specialists. We have mastered the most advanced technologies. Our arsenal includes client and server side, cloud technologies, setting up and configuring LLM/AI for user needs, machine learning, data management, and more.*/}
+
+                  {/*What makes us unique?*/}
+                  {/*We specialize in customized solutions to meet each client's requirements and needs. We offer a full product development cycle from ideation to full realization, and can effectively integrate into existing projects at any stage of development. This allows 0/1 Combine to provide excellent service to every client, of any size and from any business sector.*/}
+
+                  {/*0/1 Combine today*/}
+                  {/*Today, 0/1 Combine is a dynamic and growing company with a successful track record. We are distinguished by efficiency and promptness in solving any problem. We are ready to provide excellent service to every client, regardless of their size or area of business. We have a unique ability to quickly get involved in any project and solve problems at the highest level.*/}
+
+                  {/*Come to 0/1 Combine and we will turn your ideas into reality!*/}
+                  {/*With us, you will be confident in the future.*/}
                </p>
             </div>
 
