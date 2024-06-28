@@ -1,12 +1,13 @@
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import localesNames from '@/locales/localesNames';
 import { Locale, LOCALES_LIST } from '@/utils/constants';
 
 const LanguageSwitcher = () => {
    const { i18n } = useTranslation();
+   const dropdownRef = useRef<HTMLDivElement | null>(null);
    const router = useRouter();
    const [dropdownIsActive, setDropdownIsActive] = React.useState(false);
    const [displayLangName, setDisplayLangName] = useState<string>(i18n.language);
@@ -15,6 +16,20 @@ const LanguageSwitcher = () => {
       setDisplayLangName(localesNames[i18n.language]?.nativeName);
       i18n.changeLanguage(i18n.language);
    }, [i18n.language]);
+
+   useEffect(() => {
+      function handleClickOutside(event: MouseEvent) {
+         if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+            setDropdownIsActive(false);
+         }
+      }
+
+      document.addEventListener('mousedown', handleClickOutside);
+
+      return () => {
+         document.removeEventListener('mousedown', handleClickOutside);
+      };
+   }, []);
 
    const changeLocale = (lang: Locale) => {
       if (i18n.language !== lang) {
@@ -26,12 +41,12 @@ const LanguageSwitcher = () => {
    };
 
    return (
-      <div className="relative mt-1">
+      <div ref={dropdownRef} className="relative mt-1">
          <button
             onClick={() => setDropdownIsActive((prevState) => !prevState)}
             type="button"
             className={
-               'flex w-auto gap-x-2 px-2 py-1.5 font-normal leading-5 rounded-full text-sm text-gray-100 hover:bg-white hover:text-black'
+               'flex w-auto gap-x-2 px-2 py-1.5 font-medium text-sm leading-5 rounded-full text-gray-100 hover:bg-white hover:text-black'
             }
             id="menu-button"
             aria-expanded="false"
@@ -91,7 +106,7 @@ const LanguageSwitcher = () => {
                               height={18}
                            />
                            <div className="min-w-0 flex-auto">
-                              <p className="font-normal text-left leading-6 text-gray-900">
+                              <p className="font-medium text-left leading-6 text-gray-900">
                                  {localesNames[lang]?.nativeName}
                               </p>
                            </div>
