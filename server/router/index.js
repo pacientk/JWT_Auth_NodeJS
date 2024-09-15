@@ -1,6 +1,7 @@
 const Router = require('express').Router;
 const router = new Router();
 const userController = require('../controllers/user.controller');
+const contactUsFormController = require('../controllers/contactUsForm.controller');
 const { body } = require('express-validator');
 const authMiddleware = require('../middlewares/auth.middleware');
 
@@ -17,5 +18,6 @@ router.get('/refresh', userController.refresh);
 router.get('/users', /*authMiddleware,*/ userController.getUsers);
 router.delete('/users/:id', userController.deleteUser);
 router.post('/users/addnew', userController.addUser);
+router.post('/contactform', contactUsFormController.addContactUsForm);
 
 module.exports = router;

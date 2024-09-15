@@ -20,11 +20,28 @@ const AboutUs = () => {
                   {t('aboutus.title')}
                </h1>
             </div>
+            <div className="w-auto md:w-2/3 content-center m-auto flex">
+               <h2 className={'text-white text-center text-lg font-normal px-4'}>
+                  {t('aboutus.subtitle')}
+               </h2>
+            </div>
+
+            <div className={'grid grid-cols-2 gap-x-16'}>
+               <div className={'leading-loose text-white text-wrap '}>
+                  Our story began in 2015 and since then we have developed many interesting apps and
+                  websites for organizations of different sizes, and many uniq software solutions.
+                  Our experience includes working with startups, advertising and media agencies,
+                  private entrepreneurs, and others.
+               </div>
+               <div>11</div>
+               <div>11</div>
+               <div>11</div>
+            </div>
 
             <div className={'container sm:columns-2 text-pretty gap-x-16 my-16'}>
                <p className={'leading-loose text-white font-normal text-wrap '}>
                   {t('aboutus.content')}
-                  {/*Welcome to the innovation and software development world with 0/1 Combine - your reliable partner in creating unique solutions! Our story began in 2015 and since then we have developed many interesting apps and websites for organizations of different sizes, and many uniq software solutions. Our experience includes working with startups, advertising and media agencies, private entrepreneurs, and others.*/}
+                  {/*Our story began in 2015 and since then we have developed many interesting apps and websites for organizations of different sizes, and many uniq software solutions. Our experience includes working with startups, advertising and media agencies, private entrepreneurs, and others.*/}
 
                   {/*What makes us special?*/}
                   {/*Our team includes talented developers, professional product managers, and experienced UI/UX specialists. We have mastered the most advanced technologies. Our arsenal includes client and server side, cloud technologies, setting up and configuring LLM/AI for user needs, machine learning, data management, and more.*/}

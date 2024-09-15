@@ -1,11 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ButtonXL } from '@/components';
 import { useTranslation } from 'next-i18next';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import axios from 'axios';
 
 const Contactus = () => {
    const { t } = useTranslation();
+   const [isFormVisible, setIsFormVisible] = useState(true);
+   const [formData, setFormData] = useState({
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      category: '',
+      customerId: '',
+      message: '',
+   });
+
+   console.log('@@@@ formData:::', formData);
+   const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api';
+
+   const actionOnSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      try {
+         const response = await axios.post(`${apiUrl}/contactform`, formData);
+         console.log('@@@@ response >>>>', response.data);
+
+         if (response.status === 200) {
+            setIsFormVisible(false);
+         }
+      } catch (error) {
+         console.error('Error sending contact form:', error);
+      }
+   };
+
    return (
       <section className={'max-w-6xl mx-auto px-4 mb-48'}>
          <div className={'mt-32 mb-5'}>
@@ -19,7 +48,18 @@ const Contactus = () => {
 
          <div className={'grid grid-cols-1 md:grid-cols-2 gap-x-16'}>
             <div className={'text-white'}>
-               <div className="grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-4">
+               <h1
+                  className={`${
+                     isFormVisible ? 'hidden' : 'block'
+                  } px-9 pt-6 pb-6 rounded text-center lg:text-7xl md:text-6xl sm:text-6xl text-5xl tracking-tight text-white font-semibold`}>
+                  Thank you for contacting us!
+               </h1>
+               <form
+                  className={`${
+                     isFormVisible ? 'block' : 'hidden'
+                  } grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-4`}
+                  onSubmit={actionOnSubmit}
+                  method="POST">
                   <div className="sm:col-span-2">
                      <label
                         htmlFor="firstName"
@@ -28,6 +68,7 @@ const Contactus = () => {
                      </label>
                      <div className="mt-2">
                         <input
+                           onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                            type="text"
                            name="firstName"
                            id="firstName"
@@ -45,6 +86,7 @@ const Contactus = () => {
                      </label>
                      <div className="mt-2">
                         <input
+                           onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                            type="text"
                            name="lastName"
                            id="lastName"
@@ -62,6 +104,7 @@ const Contactus = () => {
                      </label>
                      <div className="mt-2">
                         <input
+                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                            id="email"
                            name="email"
                            type="email"
@@ -79,6 +122,7 @@ const Contactus = () => {
                      </label>
                      <div className="mt-2">
                         <input
+                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                            id="phone"
                            name="phone"
                            type="tel"
@@ -90,15 +134,16 @@ const Contactus = () => {
 
                   <div className="col-span-full">
                      <label
-                        htmlFor="country"
+                        htmlFor="category"
                         className="block text-sm font-medium leading-6 text-white">
                         Request subject
                      </label>
                      <div className="mt-2">
                         <select
-                           id="country"
-                           name="country"
-                           autoComplete="country-name"
+                           onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+                           id="category"
+                           name="category"
+                           autoComplete="category-name"
                            className="block w-full bg-gray-600 bg-opacity-30 ring-1 ring-white rounded-md border-0 p-2.5 text-white placeholder:text-gray-400 sm:leading-6">
                            <option>Website quote</option>
                            <option>Mobile application quote</option>
@@ -109,14 +154,17 @@ const Contactus = () => {
 
                   <div className="sm:col-span-2">
                      <label
-                        htmlFor="userID"
+                        htmlFor="customerId"
                         className="block text-sm font-medium leading-6 text-white">
                         Customer ID:
                      </label>
                      <div className="mt-2">
                         <input
-                           id="userID"
-                           name="userID"
+                           onChange={(e) =>
+                              setFormData({ ...formData, customerId: e.target.value })
+                           }
+                           id="customerId"
+                           name="customerId"
                            type="number"
                            autoComplete="ID"
                            className="block w-full bg-gray-600 bg-opacity-30 ring-1 ring-white rounded-md border-0 p-2.5 text-white placeholder:text-gray-400 sm:leading-6"
@@ -132,6 +180,7 @@ const Contactus = () => {
                      </label>
                      <div className="mt-2">
                         <textarea
+                           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                            id="message"
                            name="message"
                            rows={3}
@@ -144,13 +193,14 @@ const Contactus = () => {
                   <div className="col-span-full justify-end flex">
                      <div className={'flex columns-2 justify-between'}>
                         <ButtonXL
+                           type={'submit'}
                            containerStyle={'my-4'}
                            content={t('btn_ContactUsNow')}
-                           routeName={'/contactus'}
+                           // routeName={'/addContactUsForm'}
                         />
                      </div>
                   </div>
-               </div>
+               </form>
             </div>
 
             <div className={'text-white'}>

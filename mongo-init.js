@@ -10,6 +10,28 @@ db.createUser({
 // Создаем коллекции
 db.createCollection('users');
 db.createCollection('tokens');
+db.createCollection('contactUsForms');
+
+db.contactUsForms.insertMany([
+   {
+      firstName: 'Kir',
+      lastName: 'Ter',
+      email: 'as@as.com',
+      phone: '+9726564661',
+      category: 'Customer service',
+      customerId: '123123',
+      message: 'Message',
+   },
+   {
+      firstName: 'Kir',
+      lastName: 'Ter',
+      email: 'sa@sa.com',
+      phone: '+9726564681',
+      category: 'Customer service',
+      customerId: '1231203',
+      message: 'Message Message Message',
+   },
+]);
 
 db.users.insertMany([
    {
