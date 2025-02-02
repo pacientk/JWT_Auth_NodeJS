@@ -26,34 +26,9 @@ const AboutUs = () => {
                </h2>
             </div>
 
-            <div className={'grid grid-cols-2 gap-x-16'}>
-               <div className={'leading-loose text-white text-wrap '}>
-                  Our story began in 2015 and since then we have developed many interesting apps and
-                  websites for organizations of different sizes, and many uniq software solutions.
-                  Our experience includes working with startups, advertising and media agencies,
-                  private entrepreneurs, and others.
-               </div>
-               <div>11</div>
-               <div>11</div>
-               <div>11</div>
-            </div>
-
             <div className={'container sm:columns-2 text-pretty gap-x-16 my-16'}>
                <p className={'leading-loose text-white font-normal text-wrap '}>
                   {t('aboutus.content')}
-                  {/*Our story began in 2015 and since then we have developed many interesting apps and websites for organizations of different sizes, and many uniq software solutions. Our experience includes working with startups, advertising and media agencies, private entrepreneurs, and others.*/}
-
-                  {/*What makes us special?*/}
-                  {/*Our team includes talented developers, professional product managers, and experienced UI/UX specialists. We have mastered the most advanced technologies. Our arsenal includes client and server side, cloud technologies, setting up and configuring LLM/AI for user needs, machine learning, data management, and more.*/}
-
-                  {/*What makes us unique?*/}
-                  {/*We specialize in customized solutions to meet each client's requirements and needs. We offer a full product development cycle from ideation to full realization, and can effectively integrate into existing projects at any stage of development. This allows 0/1 Combine to provide excellent service to every client, of any size and from any business sector.*/}
-
-                  {/*0/1 Combine today*/}
-                  {/*Today, 0/1 Combine is a dynamic and growing company with a successful track record. We are distinguished by efficiency and promptness in solving any problem. We are ready to provide excellent service to every client, regardless of their size or area of business. We have a unique ability to quickly get involved in any project and solve problems at the highest level.*/}
-
-                  {/*Come to 0/1 Combine and we will turn your ideas into reality!*/}
-                  {/*With us, you will be confident in the future.*/}
                </p>
             </div>
 

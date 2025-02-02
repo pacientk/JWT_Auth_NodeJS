@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { v4 as uuidv4 } from 'uuid';
 import ButtonXL from '../../components/ButtonXL';
 import { useTranslation } from 'next-i18next';
@@ -37,29 +38,31 @@ const Homepage = () => {
             {/* Technologies */}
             <section
                className={
-                  'w-full mt-[150px] sm:mt-[300px] md:mt-[400px] lg:mt-[380px] xl:mt-[550px] max-w-6xl mx-auto px-4'
+                  'w-full mt-[150px] sm:mt-[300px] md:mt-[400px] lg:mt-[380px] xl:mt-[600px] max-w-6xl mx-auto px-4'
                }>
                <h1
                   className={
                      'px-9 pt-6 pb-6 text-center lg:text-7xl md:text-6xl sm:text-6xl text-5xl tracking-tight text-white font-semibold'
                   }>
-                  {t('technologies.title', { ns: 'homePage' })}
+                  {HomePage_SectionsContent.technologies.title}
+                  {/*{t('technologies.title', { ns: 'homePage' })}*/}
                </h1>
 
                <h2 className={'text-white text-center text-lg font-normal'}>
-                  {t('technologies.subTitle', { ns: 'homePage' })}
+                  {HomePage_SectionsContent.technologies.subTitle}
+                  {/*{t('technologies.subTitle', { ns: 'homePage' })}*/}
                </h2>
 
                <div className={'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-16'}>
                   {HomePage_SectionsContent.technologies.sections.map((item) => (
                      <div key={uuidv4()} className="mt-24 overflow-hidden text-center">
-                        {/*<Image*/}
-                        {/*   className={'mb-8 m-auto'}*/}
-                        {/*   src={item.img}*/}
-                        {/*   alt={item.extText}*/}
-                        {/*   width={144}*/}
-                        {/*   height={144}*/}
-                        {/*/>*/}
+                        <Image
+                           className={'mb-8 m-auto'}
+                           src={item.img}
+                           alt={item.extText}
+                           width={144}
+                           height={144}
+                        />
                         <h3 className={'mb-6 text-3xl z-10 text-white font-semibold'}>
                            {item.title}
                         </h3>
@@ -83,9 +86,56 @@ const Homepage = () => {
                {/*SubTitile Section*/}
                <div className={'flex justify-center mt-16'}>
                   <h2 className={'w-2/3 justify-center text-lg font-normal text-white text-center'}>
-                     Unleash your business potential with our innovative and reliable software
-                     solutions that streamline workflow, boost productivity, and empower your
-                     success.
+                     {HomePage_SectionsContent.technologies.finalText}
+                  </h2>
+               </div>
+
+               <div className={'flex columns-2 justify-between'}>
+                  <ButtonXL content={'Contact us'} routeName={'/contactus'} />
+               </div>
+            </section>
+
+            {/* From Idea to Results */}
+            <section className={'w-full mt-[150px] max-w-6xl mx-auto px-4'}>
+               <h1
+                  className={
+                     'px-9 pt-6 pb-6 text-center lg:text-7xl md:text-6xl sm:text-6xl text-5xl tracking-tight text-white font-semibold'
+                  }>
+                  {HomePage_SectionsContent.ideaToResult.title}
+               </h1>
+
+               <h2 className={'text-white text-center text-lg font-normal'}>
+                  {HomePage_SectionsContent.ideaToResult.subTitle}
+               </h2>
+
+               <div className={'grid grid-cols-1 sm:grid-cols-2 gap-x-16'}>
+                  {HomePage_SectionsContent.ideaToResult.sections.map((item) => (
+                     <div key={uuidv4()} className="mt-24 overflow-hidden text-start">
+                        <div className="flex">
+                           <div className="flex-none pe-12 pt-14">
+                              <Image
+                                 className={'text-center'}
+                                 src={item.img}
+                                 alt={item.title}
+                                 width={50}
+                                 height={50}
+                              />
+                           </div>
+                           <div className="flex-1">
+                              <h3 className={'mb-6 text-3xl z-10 text-white font-semibold'}>
+                                 {item.title}
+                              </h3>
+                              <h4 className={'text-lg text-white font-normal mt-2'}>{item.text}</h4>
+                           </div>
+                        </div>
+                     </div>
+                  ))}
+               </div>
+
+               {/*SubTitile Section*/}
+               <div className={'flex justify-center mt-16'}>
+                  <h2 className={'w-2/3 justify-center text-lg font-normal text-white text-center'}>
+                     {HomePage_SectionsContent.ideaToResult.finalText}
                   </h2>
                </div>
 
