@@ -17,27 +17,29 @@ export const HomePage_SectionsContent = {
    technologies: {
       title: 'Technologies',
       subTitle: 'Unleash your business potential with our innovative',
+      finalText:
+         'Reliable software solutions that streamline workflow, boost productivity, and\u00A0empower your success',
       sections: [
          {
             title: 'Front End',
             techNames: ['UI/UX design', 'Frameworks JS', 'HTML5', 'SCSS', 'JavaScript'],
             extText: 'and more',
             text: 'Responsive websites for any kind of devices',
-            img: '/assets/images/002.jpg',
+            img: '/assets/images/thec_items_01_01.png',
          },
          {
             title: 'Back End',
             techNames: ['NodeJS', 'MongoDB', 'PostgreSQL', 'Umbraco', 'Wordpress', 'CMS'],
             extText: '',
             text: 'Only the most reliable and optimal server solutions',
-            img: '/assets/images/003.png',
+            img: '/assets/images/thec_items_08_08.png',
          },
          {
             title: 'Mobile / Platforms',
             techNames: ['React', 'React Native', 'Electron', 'Flutter', 'Android', 'iOS'],
             extText: 'and many others',
             text: 'Cross-platform development for Android and iOS',
-            img: '/assets/images/001.jpg',
+            img: '/assets/images/thec_items_06_01.png',
          },
          {
             title: 'Cloud technologies',
@@ -51,14 +53,52 @@ export const HomePage_SectionsContent = {
             techNames: ['Integration', 'Bots', 'Chats', 'Analitics'],
             extText: 'and many others',
             text: 'The most advanced cloud technologies for development',
-            img: '/assets/images/thec_items_10_10.png',
+            img: '/assets/images/thec_items_06_01.png',
          },
          {
             title: 'Management',
             techNames: ['Jira', 'GitHub', 'Azure\u00A0DevOPs'],
             extText: 'and other',
             text: 'Comprehensive Project Support for Your Success',
-            img: '/assets/images/thec_items_06_01.png',
+            img: '/assets/images/thec_items_10_10.png',
+         },
+      ],
+   },
+   ideaToResult: {
+      title: 'From Idea to Results',
+      subTitle: 'Turning Your Vision into Reality with Clear and Simple Steps',
+      finalText:
+         'Every stage is designed to ensure a seamless and\u00A0successful delivery of your project.',
+      sections: [
+         {
+            title: 'Contract Signing',
+            text: 'We discuss your goals and objectives, finalize project details, and document everything in a transparent agreement.',
+            img: '/assets/images/icon_discuss.svg',
+         },
+         {
+            title: 'Planning and Prototyping',
+            text: "We develop a strategy, create prototypes, and define exact deadlines. You'll have a clear vision of your future product.",
+            img: '/assets/images/icon_puzzle.svg',
+         },
+         {
+            title: 'Design and Development',
+            text: 'We craft a stylish and user-friendly design and then turn it into a fully functional product, keeping you involved at every stage.',
+            img: '/assets/images/icon_share.svg',
+         },
+         {
+            title: 'Testing and Refinement',
+            text: 'We thoroughly test the project for errors, make necessary adjustments, and prepare the product for launch.',
+            img: '/assets/images/icon_graph.svg',
+         },
+         {
+            title: 'Launch',
+            text: 'Your product goes live! We ensure everything runs smoothly during the launch phase and address any immediate needs.',
+            img: '/assets/images/icon_action.svg',
+         },
+         {
+            title: 'Support and Growth',
+            text: 'We stay with you after launch, providing technical support, updates, and advice to help you scale and grow your project successfully. ',
+            img: '/assets/images/icon_people.svg',
          },
       ],
    },
